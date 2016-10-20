@@ -1,0 +1,10 @@
+h1,h2 {
+  color: green;
+}
+strong {
+  color: red;
+}
+em {
+  color: blue;
+  font-style: italic;
+}

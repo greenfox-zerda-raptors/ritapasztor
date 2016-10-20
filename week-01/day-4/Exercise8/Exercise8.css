@@ -1,0 +1,16 @@
+p {
+  font-size: 18px;
+  width: 220;
+  margin: 20px 0;
+  border: 2px solid black;
+  padding: 50px;
+  background-image: url("duck.png");
+  background-repeat:no-repeat;
+  background-position: left center;
+}
+.second {
+  background-position: center;
+}
+.third {
+  background-position: bottom right;;
+}

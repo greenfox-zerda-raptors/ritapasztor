@@ -1,0 +1,9 @@
+.boxes p {
+  color: RGB(199,39,0);
+  font-size: 60 px;
+  background-color: RGB(255,255,0);
+  margin: 10px;
+  padding: 10px;
+  border: 2px solid black;
+  width: 100px;
+}
