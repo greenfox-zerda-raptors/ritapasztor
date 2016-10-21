@@ -1,0 +1,45 @@
+h1, h2, p {
+  text-align: center;
+  font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
+  }
+body {
+  margin: 0;
+}
+img {
+  width: 100%
+}
+h1{
+  margin-top: 39px;
+  font-weight: 700;
+  font-size: 40px;
+  font-style: normal;
+  margin-left: -2.5px;
+  line-height: 1.04;
+  letter-spacing: -.028em;
+}
+h2 {
+  color: rgba(0,0,0,.44);
+  font-weight: 300;
+  font-style: normal;
+  font-size: 27px;
+  margin-left: -1.69px;
+  line-height: 1.22;
+  letter-spacing: -.022em;
+}
+article {
+  width: 700px;
+  margin: 0 auto;
+}
+p {
+  text-align: left;
+    letter-spacing: .01rem;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 21px;
+    line-height: 1.58;
+    letter-spacing: -.003em;
+    color: rgba(0, 0, 0, 0.8);
+}
+a {
+  color: rgba(0, 0, 0, 0.8);
+}
