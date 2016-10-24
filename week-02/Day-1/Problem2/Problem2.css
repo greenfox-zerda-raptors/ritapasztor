@@ -1,0 +1,44 @@
+body {
+  margin: auto;
+  width: 600px;
+}
+header {
+  background-color: rgb(0, 255, 255);
+  height: 100px;
+}
+
+.leftsidebar {
+  background-color: rgb(254, 165, 0);
+  width: 100px;
+  }
+
+.content {
+  background-color: red;
+  width: 376px;
+  margin: 0px 12px;
+  position: relative;
+  }
+
+.rigthsidebar {
+  background-color: rgb(129, 0, 127);;
+  width: 100px;
+}
+
+.main {
+  float: left;
+  height: 500px;
+}
+
+footer {
+  background-color: blue;
+  height: 100px;
+  clear: both;
+}
+#box{
+  background: black;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}

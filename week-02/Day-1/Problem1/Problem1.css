@@ -1,0 +1,27 @@
+body{
+  width: 350px;
+}
+p {
+  font-size: 18px;
+  margin: 10px;
+  border-bottom: 2px solid black;
+  padding: 10px 0px;
+  text-align: justify;
+  line-height: 20px;
+}
+.first img {
+  float: left;
+  margin: 0px 10px 10px 0px;
+}
+
+/*.first:after {
+  content: "";
+  display: block;
+  clear: both;
+}*/
+.second img{
+  float:right;
+  margin-left: 10px;
+  margin-bottom: 10px;
+
+  }
