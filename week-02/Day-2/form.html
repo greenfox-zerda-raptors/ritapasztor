@@ -1,0 +1,95 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="form.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+  </head>
+
+  <body>
+    <form>
+      <h1>Profil</h1>
+      <section class="flex-container">
+        <div class="adatok">
+          <h2>Személyes adatok</h2>
+          <div>
+            <label for="name"><h3>Név<span class="red">*</span></h3></label>
+            <input type="text" id="name" name="user_name" required="true">
+          </div>
+          <div class="birthandsex">
+            <div>
+              <label for="birth"><h3>Születési éved</h3></label>
+              <input type="number" id="birth" name="user_birth" placeholder="pl.1984" maxlength="4">
+            </div>
+            <div>
+              <label><h3>Nemed</h3></label>
+              <input type="radio" class="gender" name="user_gender" value="female">nő
+              <input type="radio" class="gender" name="user_gender" value="male">férfi
+            </div>
+          </div>
+          <div>
+            <h3>Milyen márkákat szeretsz?</h3>
+            <div class="markak">
+              <div class="column1">
+                <input type="checkbox" class="brands" name="brands" value="adidas">Adidas <br>
+                <input type="checkbox" class="brands" name="brands" value="apple">Apple<br>
+                <input type="checkbox" class="brands" name="brands" value="coca-cola">Coca-Cola<br>
+                <input type="checkbox" class="brands" name="brands" value="mazda">Mazda<br>
+                <input type="checkbox" class="brands" name="brands" value="nike">Nike
+              </div>
+              <div class="column2">
+                <input type="checkbox" class="brands" name="brands" value="opel">Opel <br>
+                <input type="checkbox" class="brands" name="brands" value="ray-ban">Ray-Ban<br>
+                <input type="checkbox" class="brands" name="brands" value="starbucks">Starbucks<br>
+                <input type="checkbox" class="brands" name="brands" value="tesla">Tesla<br>
+                <input type="checkbox" class="brands" name="brands" value="yahoo">Yahoo
+              </div>
+            </div>
+            <p>Többet is választhatsz!</p>
+          </div>
+        </div>
+
+        <div class="kapcsolat">
+          <h2>Kapcsolat</h2>
+          <div>
+            <label for="tel"><h3>Telefonszám<span class="red">*</span></h3></label>
+            <input type="tel" id="tel" name="user_tel" placeholder="+36 -- --- ----">
+          </div>
+          <div>
+            <label for="mail"><h3>E-mail cím<span class="red">*</span></h3></label>
+            <input type="email" id="mail" name="user_mail" placeholder="nev@domain.hu">
+          </div>
+          <div>
+            <label for="facebook"><h3>Facebook profilod</h3></label>
+            <input type="url" id="facebook" name="user_facebook" placeholder="http://facebook.com/..">
+          </div>
+          <div>
+            <label for="twitter"><h3>Twitter profilod</h3></label>
+            <input type="url" id="twitter" name="user_twitter" placeholder="http://twitter.com/..">
+          </div>
+          <div>
+            <label for="house"><h3>Milyen házban laksz?</h3></label>
+            <!-- <input id="house" name="user_house" value="Válassz típust!"> -->
+            <!-- <input placeholder=Válassz típust!> -->
+            <select name="house">
+              <option value="small">kicsi</option>
+              <option value="big">nagy</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <div class="intro">
+        <div>
+          <label for="intro"><h3>Bemutatkozás<span class="red">*</span><h3></label>
+          <!-- <input type="text" id="intro" name="user_intro"> -->
+          <textarea id="intro" name="user_intro" placeholder="Írj magadról pár mondatot!"></textarea>
+        </div>
+        <div>
+          <label for="cv"><h3>CV feltöltése<h3></label>
+          <input type="file" id="cv" name="user_cv" accept="application/pdf,application/msword">
+        </div>
+      </div>
+
+    </form>
+  </body>
+
+</html>

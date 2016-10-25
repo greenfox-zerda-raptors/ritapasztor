@@ -1,0 +1,129 @@
+body {
+  /*margin: auto;*/
+}
+
+form {
+  /*display: block;*/
+  background-color: rgb(220, 214, 205);
+  margin: 50px;
+  padding: 50px 100px;
+  max-width: 800;
+  /*height: 100%;*/
+  font-family:'Noto Sans', sans-serif;
+  color: rgb(74, 66, 97);
+  }
+
+h1 {
+  font-weight: normal;
+  margin: 40px 0px;
+}
+h2 {
+  background-color: rgb(147, 140, 151);
+  color: white;
+  font-weight: normal;
+  border: 0px;
+  border-radius: 3px;
+  /*height: 30px;*/
+  padding: 15px;
+  /*margin: 10px;*/
+}
+
+label{
+margin: 0px;
+
+}
+h3 {
+  margin: 10px 0;
+}
+
+input {
+  height: 40px;
+  /*min-width: 300px;*/
+  border-radius: 5px;
+  }
+input[type=radio] {
+  height: 20px;
+  width: 20px;
+}
+#name, #tel, #mail, #facebook, #twitter {
+  width: 385px;
+}
+
+.birthandsex {
+  -webkit-column-count: 2;
+  column-count: 2;
+}
+.birthandsex h3{
+  margin-top: 10px;
+}
+#birth {
+  width: 80px;
+}
+
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  }
+
+.adatok {
+  /*margin-right: 40px;*/
+  width: 385px;
+  /*width: 300px;*/
+}
+
+.kapcsolat {
+  width: 385px;
+  padding-left: 30px;
+}
+.markak{
+  display: flex;
+  /*flex-wrap: wrap;*/
+}
+.column1 {
+  /*flex-grow: 1;*/
+  width: 160px;
+}
+.column2 {
+  /*flex-grow: 1;*/
+  width: 160px;
+}
+
+input[type=checkbox] {
+  height: 20px;
+  width: 	20px;
+}
+.intro textarea{
+  width: 620px;
+  height: 170px;
+}
+p {
+  color: rgb(159, 156, 152);
+}
+
+input[type=tel],input[type=email],input[type=url],input[type=number] {
+  /*color: rgb(159, 156, 152);*/
+  font-size: 15px;
+  padding: 10px;
+}
+.red {
+  color: red;
+  margin-left: 4px;
+}
+select {
+  padding: 10px;
+  font-size: 15px;
+  width: 385;
+  font-family:'Noto Sans', sans-serif
+}
+textarea {
+  font-size: 15px;
+  padding: 10px;
+  font-family:'Noto Sans', sans-serif;
+}
+/*input[type=file] {
+  height: 40px;
+  border-radius: 5px;
+  background-color: white;
+
+}*/
