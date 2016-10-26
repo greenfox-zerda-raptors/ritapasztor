@@ -1,11 +1,15 @@
-<html>
+<!DOCTYPE html>
+
+
+<html lang="hu">
   <head>
+    <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="form.css">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
   </head>
 
   <body>
-    <form>
+    <form action="/edit-profile" method="post">
       <h1>Profil</h1>
       <section class="flex-container">
         <div class="adatok">
@@ -70,6 +74,7 @@
             <!-- <input id="house" name="user_house" value="Válassz típust!"> -->
             <!-- <input placeholder=Válassz típust!> -->
             <select name="house">
+              <option value="" disabled selected> Válassz típust!</option>
               <option value="small">kicsi</option>
               <option value="big">nagy</option>
             </select>
@@ -83,10 +88,21 @@
           <!-- <input type="text" id="intro" name="user_intro"> -->
           <textarea id="intro" name="user_intro" placeholder="Írj magadról pár mondatot!"></textarea>
         </div>
+
         <div>
           <label for="cv"><h3>CV feltöltése<h3></label>
           <input type="file" id="cv" name="user_cv" accept="application/pdf,application/msword">
         </div>
+
+        <div>
+          <input type="checkbox" class="conditions" name="conditions" value="accepted"> Elfogadom a felhasználási feltételeket
+        </div>
+
+        <div class="buttons">
+          <button type="submit" class="save" value="Submit">Mentés</button>
+          <button type="submit" class="reset" value="Reset">Űrlap törlése</button>
+        </div>
+
       </div>
 
     </form>
