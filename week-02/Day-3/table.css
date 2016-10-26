@@ -1,0 +1,65 @@
+.box {
+  background-color: rgb(77, 150, 233);
+  font-family: 'Open Sans', sans-serif;
+  width: 800px;
+  height: 400px;
+  padding: 30px;
+}
+
+table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  /*padding: 30px;*/
+  }
+
+thead {
+  background-color: black;
+  color: rgb(212, 220, 228);
+  font-size: 25px;
+  font-weight: normal;
+  text-align: left;
+}
+
+tbody {
+  background-color: white;
+  color: rgb(102, 107, 132, 1.00);
+}
+
+tbody tr:nth-child(odd){
+  background-color: rgb(235, 235, 235);
+}
+
+td {
+  padding: 20px;
+  border: 2px solid rgb(193, 195, 208);
+}
+
+th {
+  padding: 20px;
+  border-bottom: 4px solid rgb(193, 195, 208);
+  border-right:2px solid rgb(193, 195, 208);
+}
+
+tr > :first-child {
+  border-left-style: hidden;
+}
+
+tr > :last-child {
+  border-right-style: hidden
+}
+
+th:first-of-type{
+  border-top-left-radius: 5px;
+}
+th:last-of-type{
+  border-top-right-radius: 5px;
+}
+td:last-of-type{
+  border-bottom-right-radius: 5px;
+  border-bottom: none;
+}
+tbody tr:last-of-type td:first-of-type{
+  border-bottom-left-radius: 5px;
+  border-bottom: none;
+}

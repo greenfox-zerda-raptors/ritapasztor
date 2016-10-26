@@ -1,0 +1,64 @@
+.boxes{
+  padding: 50px;
+}
+
+.button {
+  /*width:230px;*/
+  /*height: 65px;*/
+  font-family: Arial;
+  font-size: 30px;
+  margin: 10px;
+  text-decoration: none;
+  text-align: center;
+  padding: 20px 40px;
+
+}
+
+.white {
+  background: rgb(250, 250, 250);
+  background: linear-gradient(top, rgb(250, 250, 250)  0%, rgb(212, 212, 212) 100%);
+  background: -moz-linear-gradient(top, rgb(250, 250, 250) 0%, rgb(212, 212, 212) 100%);
+  background: -webkit-linear-gradient(top, rgb(250, 250, 250) 0%, rgb(212, 212, 212) 100%);
+  /*float: left;*/
+  border: 2px solid rgb(212, 212, 212);
+  color: rgb(103, 103, 103);
+}
+
+.blue {
+  background: rgb(26, 164, 203);
+  background: linear-gradient(top, rgb(26, 164, 203) 0%, rgb(16, 121, 150) 100%);
+  background: -moz-linear-gradient(top, rgb(26, 164, 203) 0%, rgb(16, 121, 150) 100%);
+  background: -webkit-linear-gradient(top, rgb(26, 164, 203) 0%, rgb(16, 121, 150) 100%);
+  /*float: left;*/
+  border: 2px solid rgb(16, 121, 150);
+  color: white;
+}
+
+.green {
+  background: rgb(132, 187, 35);
+  background: linear-gradient(top, rgb(132, 187, 35) 0%, rgb(91, 129, 21) 100%);
+  background: -moz-linear-gradient(top, rgb(132, 187, 35) 0%, rgb(91, 129, 21) 100%);
+  background: -webkit-linear-gradient(top, rgb(132, 187, 35) 0%, rgb(91, 129, 21) 100%);
+  /*float: left;*/
+  border: 2px solid rgb(91, 129, 21);
+  color: white;
+}
+
+.white:hover{
+  background: rgb(153, 217, 234);
+}
+
+.blue:hover{
+  background: red;
+}
+.blue:active{
+  background: rgb(153, 217, 234);
+}
+
+.green:hover{
+  /*background-color: yellow;*/
+  background: rgb(132, 187, 35);
+  background: linear-gradient(bottom, rgb(132, 187, 35) 0%, rgb(91, 129, 21) 100%);
+  background: -moz-linear-gradient(bottom, rgb(132, 187, 35) 0%, rgb(91, 129, 21) 100%);
+  background: -webkit-linear-gradient(bottom, rgb(132, 187, 35) 0%, rgb(91, 129, 21) 100%);
+}
