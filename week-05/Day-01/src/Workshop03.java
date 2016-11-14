@@ -1,3 +1,5 @@
+import javax.sound.midi.Soundbank;
+
 /**
  * Created by Rita on 2016.11.14..
  */
@@ -21,17 +23,31 @@ public class Workshop03 {
         myCar3.setTypeCar("Beamer");
         myCar3.setKmOdometer(42521);
 
-        myCar.drive(15);
+        //myCar.drive(15);
         System.out.println(myCar.toString());
 
         System.out.println();
-        myCar2.drive(49);
+        //myCar2.drive(49);
         System.out.println(myCar2.toString());
 
         System.out.println();
-        myCar3.drive(1200);
+        //myCar3.drive(1200);
         System.out.println(myCar3.toString());
-       
 
+        System.out.println();
+        Car myCar4 = new Car();
+        System.out.println(myCar4.toString());
+
+        System.out.println();
+        Car myCar5 = new Car("Opel", "white", 1400, 25);
+        System.out.println(myCar5.toString());
+
+        System.out.println();
+        Car myCar6 = new Car("VW","grey");
+        System.out.println(myCar6.toString());
+
+        System.out.println();
+        Car myCar7 = new Car(1100, 15);
+        System.out.println(myCar7.toString());
     }
 }

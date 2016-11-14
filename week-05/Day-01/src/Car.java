@@ -53,6 +53,34 @@ public class Car {
                 engineSize,
                 kmOdometer);
     }
+    public Car() {
+        this("Mazda","red", 1100, 15);
+
+//        this.color = "red";
+//        this.typeCar = "Mazda";
+//        this.engineSize = 1100;
+//        this.kmOdometer = 15;
+    }
+    public Car(String typeCar, String color) {
+        this(typeCar, color, 1100, 15);
+
+//        this.typeCar = typeCar;
+//        this.color = color;
+    }
+    public Car(int engineSize, int kmOdometer) {
+        this("Mazda","red", engineSize, kmOdometer);
+//
+//        this.engineSize = engineSize;
+//        this.kmOdometer = kmOdometer;
+    }
+    public Car(String typeCar, String color, int engineSize, int kmOdometer){
+        this.typeCar = typeCar;
+        this.color = color;
+        this.engineSize = engineSize;
+        this.kmOdometer = kmOdometer;
+    }
+
+
 
     }
 
