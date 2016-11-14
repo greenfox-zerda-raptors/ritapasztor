@@ -46,6 +46,13 @@ public class Car {
             System.out.println("Whee, the " + color + " " + typeCar + " " + kilometer + " clicks.");
         }
         }
+    public String toString() {
+        return String.format("This %s is %s, has %s cc engine and clocked %s km's.",
+                typeCar,
+                color,
+                engineSize,
+                kmOdometer);
+    }
 
     }
 

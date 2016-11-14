@@ -22,13 +22,16 @@ public class Workshop03 {
         myCar3.setKmOdometer(42521);
 
         myCar.drive(15);
-        System.out.printf("This %s is %s, has %s cc engine and clocked %s km's.\n", myCar.getTypeCar(), myCar.getColor(), myCar.getEngineSize(), myCar.getKmOdometer());
+        System.out.println(myCar.toString());
+
         System.out.println();
         myCar2.drive(49);
-        System.out.printf("This %s is %s, has %s cc engine and clocked %s km's.\n", myCar2.getTypeCar(), myCar2.getColor(), myCar2.getEngineSize(), myCar2.getKmOdometer());
+        System.out.println(myCar2.toString());
+
         System.out.println();
         myCar3.drive(1200);
-        System.out.printf("This %s is %s, has %s cc engine and clocked %s km's.\n", myCar3.getTypeCar(), myCar3.getColor(), myCar3.getEngineSize(), myCar3.getKmOdometer());
+        System.out.println(myCar3.toString());
+       
 
     }
 }
