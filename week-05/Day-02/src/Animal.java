@@ -9,7 +9,11 @@ public class Animal {
     public void eat() {
         System.out.println("Animal is eating.");
     }
-//    public Animal(){
-//        System.out.println("An animal was created.");
-//    }
+    public Animal(){
+        System.out.println("Animal is created.");
+    }
+    public Animal(String type){
+        System.out.println("Animal is created.");
+        System.out.println(type + " animal is created.");
+    }
 }
