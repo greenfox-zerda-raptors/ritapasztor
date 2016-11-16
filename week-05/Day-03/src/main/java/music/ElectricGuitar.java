@@ -14,6 +14,6 @@ public class ElectricGuitar extends StringedInstrument {
     }
 
     public void play() {
-        System.out.println(formatForPlay, this.name, this.numberOfStrings, "Twang");
+        System.out.printf(formatForPlay, name, this.numberOfStrings, "Twang");
     }
 }

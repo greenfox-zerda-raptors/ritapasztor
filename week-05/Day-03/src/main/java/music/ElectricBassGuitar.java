@@ -12,7 +12,7 @@ public class ElectricBassGuitar extends StringedInstrument {
         super(i);
     }
     public void play() {
-        System.out.println(formatForPlay, this.name, this.numberOfStrings,"Duum-duum-duum");
+        System.out.printf(formatForPlay, this.name, this.numberOfStrings,"Duum-duum-duum");
     }
 
 }
