@@ -6,13 +6,12 @@ package main.java.music;
 public class Violin extends StringedInstrument {
 
     public Violin() {
-        this(4);
-    }
-    public Violin(int i) {
-        super(i);
+        super("Violin",4);
     }
 
-    public void play(){
-        System.out.printf(formatForPlay, this.name, this.numberOfStrings, "Screech");
+    @Override
+    public String sound() {
+        return "screech";
     }
 }
+//getters and setters - that is a behaviour of the object, which you can specify

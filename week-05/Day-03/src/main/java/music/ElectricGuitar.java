@@ -6,14 +6,15 @@ package main.java.music;
 public class ElectricGuitar extends StringedInstrument {
 
     public ElectricGuitar() { //first you need to add value, that can be used
-        this(5);
+        super("ElectricGuitar", 6);
     }
 
-    public ElectricGuitar(int i) {
-        super(i);
+    public ElectricGuitar(int numberOfStrings) {
+        super("ElectricGuitar", numberOfStrings);
     }
 
-    public void play() {
-        System.out.printf(formatForPlay, name, this.numberOfStrings, "Twang");
+    @Override
+    public String sound() {
+        return "Twang";
     }
 }
