@@ -7,4 +7,12 @@ import java.util.Scanner;
  */
 public class TodoItem {
 //write changes to the file
+    boolean completition;
+    String name;
+
+    public TodoItem() {
+        this.name = name;
+    }
+
+
 }

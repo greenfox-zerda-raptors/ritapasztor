@@ -30,13 +30,13 @@ public class UserInput {
             } else {
                 System.out.println("Unable to add: No task is provided");
             }
-        } else if (orders.equals("remove")) {
-            if (orders.length >= 1 ) {
-
+        } else if (orders[0].equals("remove")) {
+            if (orders.length > 1 ) {
+                firstList.removeTask(orders[1]);
             }
-        } else if (orders.equals("complete")) {
+        } else if (orders[0].equals("complete")) {
 
-        } else if (orders.equals("help")) {
+        } else if (orders[0].equals("help")) {
             readHelpList();
         } else if (orders[0].equals("end")) {
             return false;
