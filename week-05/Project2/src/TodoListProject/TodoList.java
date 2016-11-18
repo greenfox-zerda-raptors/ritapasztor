@@ -11,6 +11,10 @@ import java.util.ArrayList;
 public class TodoList {
     ArrayList <String> tasks = new ArrayList<>();
 
+    public TodoList() {
+        load();
+    }
+
     public void load(){
         try (BufferedReader storedTodoList = new BufferedReader(new FileReader("C:\\Users\\Rita\\Documents\\greenfox\\ritapasztor\\week-05\\Project\\src\\com\\greenfox\\RitaTodoList\\todoList.txt"))) {
             String Currentline;
@@ -33,7 +37,10 @@ public class TodoList {
 
     public void addNew(String b) {
         tasks.add(b);
-
+//        System.out.println(tasks.toString());
+    }
+    public void removeTask(int c) {
+        tasks.remove(c);
     }
 
 }
