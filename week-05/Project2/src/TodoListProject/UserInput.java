@@ -10,16 +10,12 @@ import java.util.Scanner;
  */
 public class UserInput {
     TodoList firstList = new TodoList();
-//    public UserInput() {
-//        handleUserInput();
-//    }
 
     public boolean handleUserInput(String order) {
         String[] orders = order.split("\\s+", 2);
 
         if (order.equals("list")) {
 
-            //firstList.load();
             firstList.displayTodoList();
 
         }

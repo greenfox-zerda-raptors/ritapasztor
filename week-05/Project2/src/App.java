@@ -13,12 +13,11 @@ public class App {
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
-//        String input = scan.nextLine();
         UserInput command = new UserInput();
         command.readHelpList();
         while (command.handleUserInput(scan.nextLine())) {
         }
-//        command.handleUserInput(input);
+
 
 
 

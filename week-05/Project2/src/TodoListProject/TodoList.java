@@ -37,8 +37,8 @@ public class TodoList {
 
     public void addNew(String b) {
         tasks.add(b);
-//        System.out.println(tasks.toString());
     }
+
     public void removeTask(String c) {
         tasks.remove(Integer.parseInt(c)-1);
     }
