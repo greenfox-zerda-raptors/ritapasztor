@@ -13,9 +13,11 @@ public class Workshop20 {
         // second line
         // third line
 
+        sb.insert(0, "first line\n");
+        //sb.length();
+        //System.out.println(sb.length());
+        sb.insert(23, "third line\n");
 
-        System.out.println(sb.insert(0, "first line\n"));
-                //sb.append("\nthird line")); //its not working zet, Im on it :)
-        //System.out.println(sb.toString());
+        System.out.println(sb.toString());
     }
 }

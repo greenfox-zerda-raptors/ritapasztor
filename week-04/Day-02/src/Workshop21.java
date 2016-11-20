@@ -7,7 +7,7 @@ public class Workshop21 {
         // Add "second" to the StringBuilder (sb) between the words "first" and "third"
         // Expected output: first second third fourth
 
-        System.out.println(sb.insert(5, " second"));
-        //System.out.println(sb.toString()); //how can I do within this line?
+        sb.insert(5, " second");
+        System.out.println(sb.toString());
     }
 }
