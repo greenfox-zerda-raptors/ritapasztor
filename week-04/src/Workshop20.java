@@ -9,7 +9,7 @@ public class Workshop20 {
     }
     public static int r(int a){
         int t = 1;
-        for (int i = a; i > 0; i--) {
+        for (int i = 1; i <=a; i++) {
             t *= i;
         }
         return t;

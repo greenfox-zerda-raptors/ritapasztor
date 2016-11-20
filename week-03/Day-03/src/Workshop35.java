@@ -13,7 +13,7 @@ public class Workshop35 {
         // 1234567
 
         int count = 8;
-        for (int i = 1; i <= count; i++) {
+        for (int i = 1; i < count; i++) {
             for (int j = 1; j < count; j++) {
                 if (j <= i) {
                     System.out.print(j);
@@ -23,6 +23,5 @@ public class Workshop35 {
             }
             System.out.println();
         }
-        System.out.println();
     }
 }

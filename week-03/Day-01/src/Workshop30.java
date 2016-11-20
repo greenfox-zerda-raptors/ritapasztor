@@ -14,14 +14,15 @@ public class Workshop30 {
         // otherwise set out to 'Run Forest Run!'
 
         if (ac % 4 ==0 && time <= 200) {
-            System.out.println( sringout == "Check");
+            out = "check";
         }
         else if (time > 200) {
-            System.out.println( out == "Time out");
+            out = "Time out";
         }
         else  {
-            System.out.println( out == "Run Forest Run");
+            out = "Run Forest Run!";
         }
 
+        System.out.println(out);
     }
 }

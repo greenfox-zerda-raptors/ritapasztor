@@ -2,6 +2,7 @@
  * Created by Rita on 2016.11.04..
  */
 public class Workshop32 {
+
     public static void main(String[] args) {
         int ae = 4;
         String text = "Gold";
