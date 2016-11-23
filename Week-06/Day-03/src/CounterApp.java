@@ -15,24 +15,17 @@ public class CounterApp extends JFrame{
     public CounterApp(){
         setUpPanel();
 
-
         setTitle("Click Me");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         pack();
         setLocationRelativeTo(null);
         setResizable(false);
         setVisible(true);
-
     }
 
     private void setUpPanel() {
         JPanel panel = new JPanel();
         getContentPane().add(panel);
-
-        labelCount = new JLabel();
-        labelCount.setPreferredSize(new Dimension( 200, 30));
-        panel.add(labelCount);
-        updateCounter();
 
         buttonCounter = new JButton("Click me");
         buttonCounter.addActionListener(new ButtonCounterActionListener());
@@ -48,12 +41,24 @@ public class CounterApp extends JFrame{
                     }
         });
         panel.add(buttonReset);
+
+        labelCount = new JLabel();
+        labelCount.setPreferredSize(new Dimension( 200, 30));
+        panel.add(labelCount);
+        updateCounter();
     }
 
     private void updateCounter() {
         labelCount.setText("Clicked " + clicks + " times");
     }
 
+    private class ButtonCounterActionListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            clicks++;
+            updateCounter();
+        }
+    }
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
@@ -64,11 +69,5 @@ public class CounterApp extends JFrame{
         });
     }
 
-    private class ButtonCounterActionListener implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            clicks++;
-            updateCounter();
-        }
-    }
+
 }

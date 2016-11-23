@@ -13,6 +13,7 @@ public class HelloWorld extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
 
+
         Toolkit tk = Toolkit.getDefaultToolkit();
         Dimension dim = tk.getScreenSize();
         int xPos = (dim.width / 2) - (this.getWidth() / 2);
@@ -20,17 +21,17 @@ public class HelloWorld extends JFrame {
         this.setLocation(xPos, yPos);
 
         JPanel thePanel = new JPanel();
+        this.add(thePanel);
         JLabel label1 = new JLabel("Hello World");
         thePanel.add(label1);
-        this.add(thePanel);
+
         label1.setText("Hello Rita!");
-
-
 
         String[] hellos = {"Mirëdita", "Ahalan", "Parev", "Zdravei", "Nei Ho", "Dobrý den", "Ahoj", "Goddag", "Goede dag, Hallo", "Hello", "Saluton", "Hei", "Bonjour",
                 "Guten Tag", "Gia'sou", "Aloha", "Shalom", "Namaste", "Namaste", "Jó napot", "Halló", "Helló", "Góðan daginn", "Halo", "Aksunai", "Qanuipit", "Dia dhuit",
                 "Salve", "Ciao", "Kon-nichiwa", "An-nyong Ha-se-yo", "Salvëte", "Ni hao", "Dzien' dobry", "Olá", "Bunã ziua", "Zdravstvuyte", "Hola", "Jambo", "Hujambo", "Hej",
                 "Sa-wat-dee", "Merhaba", "Selam", "Vitayu", "Xin chào", "Hylo", "Sut Mae", "Sholem Aleychem", "Sawubona"};
+
         for (String hello : hellos) {
             JLabel hellosLabel = new JLabel(hello);
             thePanel.add(hellosLabel);
