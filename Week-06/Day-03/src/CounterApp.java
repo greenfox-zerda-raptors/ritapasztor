@@ -1,4 +1,7 @@
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Created by Rita on 2016.11.23..
@@ -10,14 +13,47 @@ public class CounterApp extends JFrame{
     private  int clicks = 0;
 
     public CounterApp(){
+        setUpPanel();
+
+
+        setTitle("Click Me");
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        pack();
+        setLocationRelativeTo(null);
+        setResizable(false);
+        setVisible(true);
+
+    }
+
+    private void setUpPanel() {
         JPanel panel = new JPanel();
-        
-        createView();
+        getContentPane().add(panel);
 
-    }
-    public void createView() {
+        labelCount = new JLabel();
+        labelCount.setPreferredSize(new Dimension( 200, 30));
+        panel.add(labelCount);
+        updateCounter();
 
+        buttonCounter = new JButton("Click me");
+        buttonCounter.addActionListener(new ButtonCounterActionListener());
+        panel.add(buttonCounter);
+
+        buttonReset = new JButton("Reset");
+        buttonReset.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        clicks = 0;
+                        updateCounter();
+                    }
+        });
+        panel.add(buttonReset);
     }
+
+    private void updateCounter() {
+        labelCount.setText("Clicked " + clicks + " times");
+    }
+
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
@@ -26,5 +62,13 @@ public class CounterApp extends JFrame{
                 new CounterApp();
             }
         });
+    }
+
+    private class ButtonCounterActionListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            clicks++;
+            updateCounter();
+        }
     }
 }
