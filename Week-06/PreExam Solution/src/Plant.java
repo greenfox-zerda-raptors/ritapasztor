@@ -16,7 +16,7 @@ public abstract class Plant {
 
     @Override
     public String toString() {
-        return "The" + color + " " + getClass().getSimpleName()
+        return "The " + color + " " + getClass().getSimpleName()
                 + (isThirsty() ? " needs water" : " doesn't need water");
     }
 }
