@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 public class WrapperApp extends JFrame implements ActionListener{
     JMenuBar menuBar;
     JMenu menu;
+    JMenu menu2;
     JMenuItem menuItem;
 
     //main method
@@ -27,6 +28,7 @@ public class WrapperApp extends JFrame implements ActionListener{
         setSize(500,500);
         setResizable(false);
         setLocationRelativeTo(null);
+        setTitle("Set up Menu");
 
         //Create menu bar
         menuBar = new JMenuBar();
@@ -34,6 +36,9 @@ public class WrapperApp extends JFrame implements ActionListener{
         //build menu
         menu = new JMenu("File");
         menuBar.add(menu);
+        menu2 = new JMenu("Edit");
+        menuBar.add(menu2);
+
 
         //add menu items
         menuItem = new JMenuItem("Exit");
