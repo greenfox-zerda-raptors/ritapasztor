@@ -5,18 +5,23 @@ import java.awt.*;
  * Created by Rita on 2016.11.25..
  */
 public class ImageGallery extends JFrame{
-    JPanel panelOut;
-    JPanel panelIn;
+    JPanel mainPanel;
+    JPanel insidePanel;
+    JPanel bottomPanel;
+
     JLabel gallery;
     JLabel imageName;
+
     JButton rightArrow;
     JButton leftArrow;
+
     ImageDisplay mainImage;
 
 
 
     //set up frame in constructor
     public ImageGallery() {
+        setLayout(new FlowLayout());
         setUpPanelOut();
 
         setSize(500,500);
@@ -24,7 +29,7 @@ public class ImageGallery extends JFrame{
         setVisible(true);
         setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setTitle("Christmas is coming");
+        setTitle("Advent Calendar");
 
     }
     //main method
@@ -39,43 +44,59 @@ public class ImageGallery extends JFrame{
 
     //set up method for outside panel
     public void setUpPanelOut() {
-        panelOut = new JPanel();
-        add(panelOut);
-        panelOut.setBackground(Color.red);
+        mainPanel = new JPanel();
+        add(mainPanel);
+        mainPanel.setBackground(Color.red);
+
 
 
         gallery = new JLabel("GALLERY");
-        panelOut.add(gallery);
+        mainPanel.add(gallery);
         gallery.setVerticalAlignment(SwingConstants.TOP);
         gallery.setPreferredSize(new Dimension(400, 30));
-        gallery.setBackground(Color.BLUE);
 
         leftArrow = new JButton("<");
-        panelOut.add(leftArrow);
-        leftArrow.setHorizontalAlignment(SwingConstants.LEFT);
+        mainPanel.add(leftArrow);
+        leftArrow.setAlignmentX( Component.LEFT_ALIGNMENT);
+//        leftArrow.setBorderPainted(false);
+//        leftArrow.setContentAreaFilled(false);
 
         setUpPanelIn();
 
         rightArrow = new JButton(">");
-        panelOut.add(rightArrow);
-        rightArrow.setHorizontalAlignment(SwingConstants.RIGHT);
+        mainPanel.add(rightArrow);
+        rightArrow.setAlignmentX( Component.RIGHT_ALIGNMENT);
 
-        //panelOut.setLayout(new BoxLayout(panelOut, BoxLayout.LINE_AXIS));
+        //mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.LINE_AXIS));
 
+        bottomPanelSetUp();
+    }
+
+    //set up method for bottom panel
+    private void bottomPanelSetUp() {
+        bottomPanel = new JPanel();
+        mainPanel.add(bottomPanel);
+        setBackground(Color.orange);
+        bottomPanel.setPreferredSize(new Dimension(400,150));
+
+        bottomPanel.setAlignmentX( Component.BOTTOM_ALIGNMENT);
     }
 
     //set up method for inside panel: image name, image, arrows
     public void setUpPanelIn() {
-        panelIn = new JPanel();
-        panelOut.add(panelIn);
-        panelIn.setPreferredSize(new Dimension(400 , 350));
+        insidePanel = new JPanel();
+        mainPanel.add(insidePanel);
+        insidePanel.setPreferredSize(new Dimension(400 , 350));
 
         imageName = new JLabel("29 days left until Xmas");
-        panelIn.add(imageName);
+        insidePanel.add(imageName);
+        imageName.setPreferredSize(new Dimension(300,20));
+        imageName.setMaximumSize(new Dimension(300,20));
+
 
         mainImage = new ImageDisplay();
         mainImage.setVisible(true);
-        panelIn.add(mainImage);
+        insidePanel.add(mainImage);
 
     }
     //set up main image label
@@ -85,7 +106,7 @@ public class ImageGallery extends JFrame{
 
         private ImageDisplay() {
             image = Toolkit.getDefaultToolkit().createImage("christmas.jpg");
-            setPreferredSize(new Dimension(200,200));
+            setPreferredSize(new Dimension(300,300));
         }
         @Override
         public void paintComponent(Graphics graphics) {
