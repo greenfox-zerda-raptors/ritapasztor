@@ -21,7 +21,7 @@ public class TestHorse {
         int feedCounterBeforeFeed = horse.getFeedCounter();
         horse.feed();
         int feedCounterAfterFeed = horse.getFeedCounter();
-        assertEquals(20, feedCounterAfterFeed - feedCounterBeforeFeed);
+        assertEquals(20, feedCounterAfterFeed - feedCounterBeforeFeed); // elso parametert varos, a 2. parametert kapod
     }
 
 
