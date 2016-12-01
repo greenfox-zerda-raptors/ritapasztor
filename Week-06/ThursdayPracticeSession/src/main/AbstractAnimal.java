@@ -22,6 +22,9 @@ public abstract class AbstractAnimal implements Animal {
     }
 
     public void setChildrenNum(int childrenNum) {
+        if (childrenNum < 0) {
+            throw new IllegalArgumentException("Children Number must be positive");
+        }
         this.childrenNum = childrenNum;
     }
 

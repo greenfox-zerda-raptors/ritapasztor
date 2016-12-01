@@ -24,8 +24,9 @@ public class TestHorse {
         assertEquals(20, feedCounterAfterFeed - feedCounterBeforeFeed);
     }
 
-    @Test
-    public void name() throws Exception {
 
+    @Test(expected = IllegalArgumentException.class) //ez a test varja, h exceptiont dobjon
+    public void testSetChildrenNum() throws Exception {
+        horse.setChildrenNum(-1);
     }
 }
