@@ -25,6 +25,10 @@ public abstract class AbstractAnimal implements Animal {
         this.childrenNum = childrenNum;
     }
 
+    public int getFeedCounter() {
+        return feedCounter;
+    }
+
     @Override
     public void move(int distance) {
         this.movedDistance += distance; //kulon is hozzaadhatom a distance-t
