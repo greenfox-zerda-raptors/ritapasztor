@@ -2,15 +2,47 @@
  * Created by Rita on 2016.12.02..
  */
 public class Car {
-    int engineSize = 1600;
-    String color = "red";
-    String typeCar = "Mazda";
-    int kmOdometer;
+    private int engineSize = 1600;
+    private String color = "red";
+    private String typeCar = "Mazda";
+    private int kmOdometer;
 
     public Car(int engineSize, String color, String typeCar, int kmOdometer) {
         this.engineSize = engineSize;
         this.color = color;
         this.typeCar = typeCar;
+        this.kmOdometer = kmOdometer;
+    }
+
+    public int getEngineSize() {
+        return engineSize;
+    }
+
+    public void setEngineSize(int engineSize) {
+        this.engineSize = engineSize;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getTypeCar() {
+        return typeCar;
+    }
+
+    public void setTypeCar(String typeCar) {
+        this.typeCar = typeCar;
+    }
+
+    public int getKmOdometer() {
+        return kmOdometer;
+    }
+
+    public void setKmOdometer(int kmOdometer) {
         this.kmOdometer = kmOdometer;
     }
 
@@ -21,4 +53,6 @@ public class Car {
                 this.engineSize,
                 this.kmOdometer);
     }
+
+
 }
