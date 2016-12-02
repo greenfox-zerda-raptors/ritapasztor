@@ -54,5 +54,27 @@ public class Car {
                 this.kmOdometer);
     }
 
+    public void drive(int km) {
+        this.kmOdometer += km;
+        if (km < 20) {
+            System.out.printf("Brrm, the %s %s just drove around town %d kms. ",
+                    this.color,
+                    this.typeCar,
+                    km);
+
+        }
+        if (km > 20 && km < 50) {
+            System.out.printf("Brrm, screech, brrm, screech; %s %s commuted %d clicks. ",
+                    this.color,
+                    this.typeCar,
+                    km);
+        } else {
+            System.out.printf("Whee, %s %s drove %d kms. ",
+                    this.color,
+                    this.typeCar,
+                    km);
+        }
+    }
+
 
 }
