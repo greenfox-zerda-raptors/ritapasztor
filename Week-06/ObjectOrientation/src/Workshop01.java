@@ -22,5 +22,14 @@ public class Workshop01 {
         myCar2.drive(1200);
         System.out.println(myCar2.toString());
 
+        Car myCar4 = new Car(1400, "white", "Opel", 25);
+        Car myCar5 = new Car("VW","grey");
+        Car myCar6 = new Car(1100, 15);
+
+        System.out.println();
+
+        System.out.println(myCar4.toString());
+        System.out.println(myCar5.toString());
+        System.out.println(myCar6.toString());
     }
 }

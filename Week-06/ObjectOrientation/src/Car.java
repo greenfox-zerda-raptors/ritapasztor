@@ -14,6 +14,14 @@ public class Car {
         this.kmOdometer = kmOdometer;
     }
 
+    public Car(String typeCar, String color) {
+        this(1600, color, typeCar,10);
+    }
+
+    public Car(int engineSize, int kmOdometer) {
+        this(engineSize, "red", "Mazda", kmOdometer);
+    }
+
     public int getEngineSize() {
         return engineSize;
     }
