@@ -11,6 +11,11 @@ public abstract class Account {
         this.accountNumber = accountNumber;
     }
 
+    public Account(int accountNumber, double balance) {
+        this.balance = balance;
+        this.accountNumber = accountNumber;
+    }
+
     public void deposit(double amountAdded) {
         if (amountAdded > 0)
             balance += amountAdded;
@@ -27,16 +32,24 @@ public abstract class Account {
                     + "cannot withdraw negative amount.");
     }
 
+    @Override
+    public String toString() {
+        return "On " + getClass().getSimpleName()  + " no. " + accountNumber + " current balance is "
+                + balance + " EUR";
+    }
+
+    public abstract void update();
+
     public double getBalance() {
         return balance;
     }
 
-    public double getAccountNumber() {
-        return accountNumber;
+    public void setBalance(double balance) {
+        this.balance = balance;
     }
 
-    public String toString() {
-        return "Acc " + accountNumber + ": " + "balance = " + balance;
+    public double getAccountNumber() {
+        return accountNumber;
     }
 
     public final void print() {

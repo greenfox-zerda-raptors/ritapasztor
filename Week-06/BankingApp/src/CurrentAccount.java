@@ -6,6 +6,15 @@ public class CurrentAccount extends Account {
         super(accountNumber);
     }
 
+    public CurrentAccount( int accountNumber, double balance) {
+        super( accountNumber, balance);
+    }
+
+    @Override
+    public void update() {
+        System.out.println("Updated current account");
+    }
+
     private double overdraftLimit;
 
 

@@ -4,13 +4,19 @@
 public class App {
     public static void main(String[] args) {
         Bank bank = new Bank();
-        bank.add(new SavingsAccount(001));
-        bank.add(new SavingsAccount(002));
-        bank.add(new SavingsAccount(003));
-        bank.add(new SavingsAccount(004));
-        bank.add(new CurrentAccount(005));
-        bank.add(new CurrentAccount(006));
-        bank.add(new CurrentAccount(007));
+        bank.add(new SavingsAccount(01, 32000, 0.05));
+        bank.add(new SavingsAccount(02, 500000, 0.1));
+        bank.add(new SavingsAccount(03));
+        bank.add(new SavingsAccount(04, 140000, 0.06));
+        bank.add(new CurrentAccount(01));
+        bank.add(new CurrentAccount(02, 15000));
+        bank.add(new CurrentAccount(03));
+
+        bank.printBank();
+
+        bank.updateMethod();
+
+        bank.printBank();
 
     }
 
