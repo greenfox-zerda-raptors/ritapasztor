@@ -11,12 +11,18 @@ public class App {
         bank.add(new CurrentAccount(01));
         bank.add(new CurrentAccount(02, 15000));
         bank.add(new CurrentAccount(03));
+        bank.add(new CurrentAccount(04, 600000));
 
         bank.printBank();
 
         bank.updateMethod();
 
         bank.printBank();
+
+        bank.openAccount();
+        bank.printBank();
+
+
 
     }
 
