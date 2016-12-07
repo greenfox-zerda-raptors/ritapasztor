@@ -1,11 +1,13 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.ArrayList;
 
 /**
  * Created by Rita on 2016.12.05..
  */
-public class Board extends JComponent {
+public class Board extends JComponent implements KeyListener {
 
     boolean[][] map = new boolean[][]{
             {false, false, false, true, true, true, false, true, false, false},
@@ -16,12 +18,16 @@ public class Board extends JComponent {
             {false, true, false, true, false, true, false, false, true, true},
             {false, true, false, true, false, true, true, false, false, true},
             {false, false, false, false, false, true, false, true, false, true},
-            {false,true, true, false, false, true, false, true, false, true},
+            {false, true, true, false, false, true, false, true, false, true},
             {false, true, false, false, false, true, false, true, false, true},
     };
 
     ArrayList<GameObject> gameObjects; //tile will be gameObject, because hero is a tile as well
     Hero hero;
+    Skeleton skeleton1;
+    Skeleton skeleton2;
+    Skeleton skeleton3;
+    Boss boss;
 
 
     public Board() {
@@ -39,6 +45,11 @@ public class Board extends JComponent {
             setVisible(true);
         }
         hero = new Hero();
+        skeleton1 = new Skeleton(5, 6);
+        skeleton2 = new Skeleton(4, 3);
+        skeleton3 = new Skeleton(2, 3);
+        boss = new Boss();
+
     }
 
     @Override
@@ -50,7 +61,41 @@ public class Board extends JComponent {
             gameObject.draw(graphics);
         }
         hero.draw(graphics);
+        boss.draw(graphics);
+        skeleton1.draw(graphics);
+        skeleton2.draw(graphics);
+        skeleton3.draw(graphics);
 
+    }
+
+    //KeyListener for arrows
+    @Override
+    public void keyTyped(KeyEvent e) {
+        System.out.println("hajra");
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_UP) {
+            System.out.println("fel");
+            hero.move(0,-1);
+        } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+            System.out.println("le");
+            hero.move(0,1);
+        } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+            hero.move(-1,0);
+            System.out.println("balra");
+        } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+            hero.move(1,0);
+            System.out.println("jobbra");
+        }
+        paint(getGraphics());
+        System.out.println("menni fog :)");
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+        //System.out.println("menniFog");
     }
 }
 

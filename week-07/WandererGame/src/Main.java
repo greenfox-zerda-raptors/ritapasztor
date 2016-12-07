@@ -7,16 +7,11 @@ public class Main {
     public static void main(String[] args) {
 
         JFrame frame = new JFrame();
-        frame.add(new Board());
+        Board board = new Board();
+        frame.add(board);
             frame.pack();
         frame.setVisible(true);
+        frame.addKeyListener(board);
 
-
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                new Main();
-            }
-        });
     }
 }
