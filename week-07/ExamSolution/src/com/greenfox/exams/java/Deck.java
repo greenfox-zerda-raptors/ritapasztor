@@ -1,6 +1,7 @@
 package com.greenfox.exams.java;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Created by Rita on 2016.12.07..
@@ -15,9 +16,17 @@ public class Deck {
         for(String color : COLORS) {
             for (int i = 1; i < 14; i++) {
                 Card card = new Card(color, i); // es mar kesz is a kartya, van egy szine es egy erteke
+                cards.add(card);                // hozzaadom az arraylisthey, lehet roviditeni is, nem kell kulon valtozoba
             }
         }
-
         used = new ArrayList<>();
+        Collections.shuffle(cards);
+    }
+
+    //huzunk a paklibol
+    public Card draw() { //cards-bol kiveszunk egyet, azt visszateresi ertekkent megadom es beleteszem a used-ba
+        Card removed = cards.remove(0); //beletsszuk egy valtozoba, amit removultunk
+        used.add(removed);
+        return removed; //return  huzott kartyat
     }
 }
