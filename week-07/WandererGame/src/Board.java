@@ -1,7 +1,11 @@
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -28,6 +32,10 @@ public class Board extends JComponent implements KeyListener {
     Skeleton skeleton2;
     Skeleton skeleton3;
     Boss boss;
+    BufferedImage upImage;
+    BufferedImage downImage;
+    BufferedImage leftImage;
+    BufferedImage rightImage;
 
 
     public Board() {
@@ -49,6 +57,15 @@ public class Board extends JComponent implements KeyListener {
         skeleton2 = new Skeleton(4, 3);
         skeleton3 = new Skeleton(2, 3);
         boss = new Boss();
+
+        try{
+            upImage = ImageIO.read(new File("hero-up.png"));
+            downImage = ImageIO.read(new File("hero-down.png"));
+            rightImage = ImageIO.read(new File("hero-right.png"));
+            leftImage = ImageIO.read(new File("hero-left.png"));
+        } catch (IOException e){
+            e.printStackTrace();
+        }
 
     }
 
@@ -79,14 +96,18 @@ public class Board extends JComponent implements KeyListener {
         if (e.getKeyCode() == KeyEvent.VK_UP) {
             System.out.println("fel");
             hero.move(0,-1);
+            hero.setImage(upImage);
         } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
             System.out.println("le");
             hero.move(0,1);
+            hero.setImage(downImage);
         } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
             hero.move(-1,0);
+            hero.setImage(leftImage);
             System.out.println("balra");
         } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
             hero.move(1,0);
+            hero.setImage(rightImage);
             System.out.println("jobbra");
         }
         paint(getGraphics());

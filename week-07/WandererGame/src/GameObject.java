@@ -23,6 +23,15 @@ public class GameObject {
 
     }
 
+    public BufferedImage getImage() {
+        return image;
+    }
+
+    public void setImage(BufferedImage image) {
+        this.image = image;
+
+    }
+
     public void draw(Graphics graphics) {
         if (image != null) {
             graphics.drawImage(image, posX * 72, posY * 72, null);
