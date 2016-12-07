@@ -24,8 +24,11 @@ public class Deck {
     }
 
     //huzunk a paklibol
-    public Card draw() { //cards-bol kiveszunk egyet, azt visszateresi ertekkent megadom es beleteszem a used-ba
-        Card removed = cards.remove(0); //beletsszuk egy valtozoba, amit removultunk
+    public Card draw() {//cards-bol kiveszunk egyet, azt visszateresi ertekkent megadom es beleteszem a used-ba
+        if (cards.size() == 0) { // ha elfogy a pakli
+            return null;
+        }
+        Card removed = cards.remove(0); //beletesszuk egy valtozoba, amit removultunk
         used.add(removed);
         return removed; //return  huzott kartyat
     }
