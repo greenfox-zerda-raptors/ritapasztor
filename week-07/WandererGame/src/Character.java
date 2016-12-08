@@ -1,46 +1,34 @@
+import java.util.Random;
+
 /**
  * Created by Rita on 2016.12.05..
  */
 public abstract class Character extends GameObject {
-    private int healthPoint;
-    private int defendPoint;
-    private int strikePoint;
+    protected String name;
+    protected int level;
+    protected int maxHealthPoint;
+    protected int currentHealthPoint;
+    protected int defendPoint;
+    protected int strikePoint;
+
+    protected Random random = new Random();
+
 
     public Character(String filename, int posX, int posY) {
         super(filename, posX, posY);
+        level = 1;
     }
 
-   /* public Character(int healthPoint, int defendPoint, int strikePoint) {
-        this.healthPoint = healthPoint;
-        this.defendPoint = defendPoint;
-        this.strikePoint = strikePoint;
-    }*/
-
-    public int getHealthPoint() {
-        return healthPoint;
-    }
-
-    public void setHealthPoint(int healthPoint) {
-        this.healthPoint = healthPoint;
-    }
-
-    public int getDefendPoint() {
-        return defendPoint;
-    }
-
-    public void setDefendPoint(int defendPoint) {
-        this.defendPoint = defendPoint;
-    }
-
-    public int getStrikePoint() {
-        return strikePoint;
-    }
-
-    public void setStrikePoint(int strikePoint) {
-        this.strikePoint = strikePoint;
-    }
 
     public abstract void strike();
+
+    @Override
+    public String toString() {
+        return this.getClass().getSimpleName() + ": " + name +
+                ", HP=" + currentHealthPoint +
+                ", DP=" + defendPoint +
+                ", SP=" + strikePoint;
+    }
 
 
 }

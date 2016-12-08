@@ -17,13 +17,13 @@ public class Board extends JComponent implements KeyListener {
             {false, false, false, true, true, true, false, true, false, false},
             {false, false, true, true, true, false, false, false, false, true},
             {false, true, false, false, false, true, false, true, true, true},
-            {false, false, false, true, true, true, false, true, false, true},
-            {true, true, false, true, false, false, false, true, false, true},
-            {false, true, false, true, false, true, false, false, true, true},
+            {false, false, false, true, true, true, false, true, false, false},
+            {true, true, false, true, false, false, false, true, false, false},
+            {false, true, false, true, false, true, false, false, false, true},
             {false, true, false, true, false, true, true, false, false, true},
             {false, false, false, false, false, true, false, true, false, true},
-            {false, true, true, false, false, true, false, true, false, true},
-            {false, true, false, false, false, true, false, true, false, true},
+            {false, true, true, true, false, true, false, true, false, true},
+            {true, true, false, false, false, false, false, true, false, true},
     };
 
     ArrayList<GameObject> gameObjects; //tile will be gameObject, because hero is a tile as well
@@ -49,13 +49,13 @@ public class Board extends JComponent implements KeyListener {
                 }
             }
             //set the size of your draw board
-            setPreferredSize(new Dimension(720, 720));
+            setPreferredSize(new Dimension(520, 650));
             setVisible(true);
         }
         hero = new Hero();
-        skeleton1 = new Skeleton(5, 6);
-        skeleton2 = new Skeleton(4, 3);
-        skeleton3 = new Skeleton(2, 3);
+        skeleton1 = new Skeleton(7, 6, "Aze");
+        skeleton2 = new Skeleton(0, 8, "Eric");
+        skeleton3 = new Skeleton(8, 0, "Misi");
         boss = new Boss();
 
         try {
@@ -82,7 +82,11 @@ public class Board extends JComponent implements KeyListener {
         skeleton1.draw(graphics);
         skeleton2.draw(graphics);
         skeleton3.draw(graphics);
-
+        graphics.drawString(hero.toString(), 20, 560);
+        graphics.drawString(boss.toString(), 20, 580);
+        graphics.drawString(skeleton1.toString(), 20, 600);
+        graphics.drawString(skeleton2.toString(), 20, 620);
+        graphics.drawString(skeleton3.toString(), 20, 640);
     }
 
     //KeyListener for arrows
