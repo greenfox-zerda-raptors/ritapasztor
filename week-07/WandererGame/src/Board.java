@@ -94,21 +94,17 @@ public class Board extends JComponent implements KeyListener {
     @Override
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_UP) {
-            System.out.println("fel");
-            hero.move(0, -1, map);
             hero.setImage(upImage);
+            hero.move(0, -1, map);
         } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-            System.out.println("le");
-            hero.move(0, 1, map);
             hero.setImage(downImage);
+            hero.move(0, 1, map);
         } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-            hero.move(-1, 0, map);
             hero.setImage(leftImage);
-            System.out.println("balra");
+            hero.move(-1, 0, map);
         } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-            hero.move(1, 0, map);
             hero.setImage(rightImage);
-            System.out.println("jobbra");
+            hero.move(1, 0, map);
         }
         paint(getGraphics());
         System.out.println("menni fog :)");

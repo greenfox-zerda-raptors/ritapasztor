@@ -28,36 +28,15 @@ public class Hero extends Character {
     public void move(int posX, int posY, boolean[][] map) {
         int newPosY = this.posY + posY;
         int newPosX = this.posX + posX;
-        if (newPosY < 0 || newPosY == map.length || map[newPosX][newPosY] == true && newPosX < 0 || newPosX == map.length || map[newPosX][newPosY] == true) {
+        if (newPosY < 0 || newPosY == 10 ||
+                newPosX < 0 || newPosX == 10) {
             // newPosY = this.posY;
+        } else if (map[newPosX][newPosY]) {
         } else {
             this.posY += posY;
             this.posX += posX;
         }
-//        if (newPosX < 0 || newPosX == map.length || map[newPosX][newPosY] == true) {
-//            // newPosX = this.posX;
-//        } else {
-//            this.posX += posX;
-//        }
-
-
-        //movebe beadom a boolean [][]-t, es majd ide alulra irom meg a felteteleket
-
-
-        //merre van fal
     }
-
-    /*public void turn(String facing) {
-        if(facing.equals("up")) {
-        this.setImage(image);
-        } else if (facing.equals("down")) {
-            this.setImage(downImage);
-        }else if (facing.equals("right")) {
-            this.setImage(rightImage);
-        } else if (facing.equals("left")) {
-            this.setImage(leftImage);
-        }
-    }*/
 }
 
 
