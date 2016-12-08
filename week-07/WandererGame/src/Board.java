@@ -58,12 +58,12 @@ public class Board extends JComponent implements KeyListener {
         skeleton3 = new Skeleton(2, 3);
         boss = new Boss();
 
-        try{
+        try {
             upImage = ImageIO.read(new File("hero-up.png"));
             downImage = ImageIO.read(new File("hero-down.png"));
             rightImage = ImageIO.read(new File("hero-right.png"));
             leftImage = ImageIO.read(new File("hero-left.png"));
-        } catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
@@ -95,18 +95,18 @@ public class Board extends JComponent implements KeyListener {
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_UP) {
             System.out.println("fel");
-            hero.move(0,-1);
+            hero.move(0, -1, map);
             hero.setImage(upImage);
         } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
             System.out.println("le");
-            hero.move(0,1);
+            hero.move(0, 1, map);
             hero.setImage(downImage);
         } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-            hero.move(-1,0);
+            hero.move(-1, 0, map);
             hero.setImage(leftImage);
             System.out.println("balra");
         } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-            hero.move(1,0);
+            hero.move(1, 0, map);
             hero.setImage(rightImage);
             System.out.println("jobbra");
         }
