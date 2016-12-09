@@ -10,7 +10,7 @@ public abstract class Character extends GameObject {
     protected int currentHealthPoint;
     protected int defendPoint;
     protected int strikePoint;
-    protected boolean isAlive;
+    protected boolean isAlive = true;
 
 
     protected Random random = new Random();
@@ -31,16 +31,23 @@ public abstract class Character extends GameObject {
             this.setAlive(false);
         }
     }
-    public boolean isFighting(){
-        
-    }
+
+
+    public abstract boolean isFighting(Hero hero);
+
+//            (Character hero, Character monster) {
+//        if (hero.posX == monster.posX && hero.posY == monster.posY) {
+//            System.out.println("van harc");
+//        }
+//        return true;
+//    }
 
     public boolean isAlive() {
         return isAlive;
     }
 
     public void setAlive(boolean isAlive) {
-        this.isAlive = isAlive;
+        this.isAlive = !isAlive;
     }
 
     @Override

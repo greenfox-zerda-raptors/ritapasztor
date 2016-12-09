@@ -12,9 +12,15 @@ public class Hero extends Character {
         super("hero-down.png", posX, posY);
         int d6 = random.nextInt(6) + 1;
         maxHealthPoint = 20 + 3 * d6;
+        currentHealthPoint = 20 + 3 * d6;
         defendPoint = 2 * d6;
         strikePoint = 5 + d6;
         name = "Superhero";
+    }
+
+    @Override
+    public boolean isFighting(Hero hero) {
+        return false;
     }
 
 

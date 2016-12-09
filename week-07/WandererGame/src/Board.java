@@ -54,6 +54,7 @@ public class Board extends JComponent implements KeyListener {
             //set the size of your draw board
             setPreferredSize(new Dimension(520, 650));
             setVisible(true);
+
         }
         hero = new Hero();
         skeleton1 = new Skeleton(7, 6, "Aze");
@@ -78,33 +79,62 @@ public class Board extends JComponent implements KeyListener {
 
     @Override
     public void paint(Graphics graphics) {
+        graphics.setColor(Color.gray);
+        graphics.fillRect(0, 0, 720, 720);
         // here you have a 720x720 canvas
         // you can create and draw an image using the class below e.g.
 
         for (GameObject gameObject : gameObjects) {
             gameObject.draw(graphics);
         }
-        if(skeleton1.isAlive) {
-            skeleton1.draw(graphics);
-            if(skeleton1.)
 
+
+        if (skeleton1.isAlive) {
+            skeleton1.draw(graphics);
+            if (skeleton1.isFighting(hero)) {
+                graphics.drawString(skeleton1.toString(), 20, 600);
+            }
         }
+        if (skeleton2.isAlive) {
+            skeleton2.draw(graphics);
+            if (skeleton2.isFighting(hero)) {
+                graphics.drawString(skeleton2.toString(), 20, 600);
+            }
+        }
+        if (skeleton3.isAlive) {
+            skeleton3.draw(graphics);
+            if (skeleton3.isFighting(hero)) {
+                graphics.drawString(skeleton3.toString(), 20, 600);
+            }
+        }
+
+        if (boss.isAlive) {
+            boss.draw(graphics);
+            if (boss.isFighting(hero)) {
+                graphics.drawString(boss.toString(), 20, 600);
+            }
+        }
+
+
         hero.draw(graphics);
-        boss.draw(graphics);
-        skeleton1.draw(graphics);
-        skeleton2.draw(graphics);
-        skeleton3.draw(graphics);
+//        boss.draw(graphics);
+//        skeleton1.draw(graphics);
+//        skeleton2.draw(graphics);
+//        skeleton3.draw(graphics);
+
+        graphics.setColor(Color.black);
+
         graphics.drawString(hero.toString(), 20, 560);
-        graphics.drawString(boss.toString(), 20, 580);
-        graphics.drawString(skeleton1.toString(), 20, 600);
-        graphics.drawString(skeleton2.toString(), 20, 620);
-        graphics.drawString(skeleton3.toString(), 20, 640);
+//        graphics.drawString(boss.toString(), 20, 580);
+//        graphics.drawString(skeleton1.toString(), 20, 600);
+//        graphics.drawString(skeleton2.toString(), 20, 620);
+//        graphics.drawString(skeleton3.toString(), 20, 640);
     }
 
     //KeyListener for arrows
     @Override
     public void keyTyped(KeyEvent e) {
-        System.out.println("hajra");
+
     }
 
     @Override
@@ -123,9 +153,11 @@ public class Board extends JComponent implements KeyListener {
             hero.move(1, 0, map);
         } else if (e.getKeyCode() == KeyEvent.VK_SPACE) {
             for (Character monster : enemies) {
-                if (hero.posX == monster.posX && hero.posY == monster.posY) {
-                    hero.strike(monster);
-                }
+                monster.isFighting(hero);
+                hero.strike(monster);
+//                if (hero.posX == monster.posX && hero.posY == monster.posY) {
+//                    hero.strike(monster);
+//                }
             }
         }
 

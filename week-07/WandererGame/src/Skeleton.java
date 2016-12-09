@@ -7,9 +7,27 @@ public class Skeleton extends Character {
         super("skeleton.png", posX, posY);
         int d6 = random.nextInt(6) + 1;
         currentHealthPoint = 2 * level * d6;
+        maxHealthPoint = 2 * level * d6;
         defendPoint = level / 2 * d6;
         strikePoint = level * d6;
         this.name = name;
     }
 
+
+//    public boolean isFighting(Character hero, Character monster) {
+//        if (hero.posX == this.posX && hero.posY == this.posY) {
+//            System.out.println("van harc");
+//            return true;
+//        }
+//        return false;
+//    }
+
+    @Override
+    public boolean isFighting(Hero hero) {
+        if (hero.posX == this.posX && hero.posY == this.posY) {
+            System.out.println(getClass().getSimpleName() + " van harc");
+            return true;
+        }
+        return false;
+    }
 }
