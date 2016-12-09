@@ -20,7 +20,7 @@ public class Boss extends Character {
     }
 
     @Override
-    public boolean isFighting(Hero hero) {
+    public boolean isAtTheSamePlace(Hero hero) {
         if (hero.posX == this.posX && hero.posY == this.posY) {
             System.out.println(getClass().getSimpleName() + " van harc");
             return true;

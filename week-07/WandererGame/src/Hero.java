@@ -19,7 +19,7 @@ public class Hero extends Character {
     }
 
     @Override
-    public boolean isFighting(Hero hero) {
+    public boolean isAtTheSamePlace(Hero hero) {
         return false;
     }
 
@@ -29,7 +29,6 @@ public class Hero extends Character {
         int newPosX = this.posX + posX;
         if (newPosY < 0 || newPosY == 10 ||
                 newPosX < 0 || newPosX == 10) {
-            // newPosY = this.posY;
         } else if (map[newPosX][newPosY]) {
         } else {
             this.posY += posY;

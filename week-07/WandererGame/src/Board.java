@@ -54,8 +54,8 @@ public class Board extends JComponent implements KeyListener {
             //set the size of your draw board
             setPreferredSize(new Dimension(520, 650));
             setVisible(true);
-
         }
+
         hero = new Hero();
         skeleton1 = new Skeleton(7, 6, "Aze");
         skeleton2 = new Skeleton(0, 8, "Eric");
@@ -74,7 +74,6 @@ public class Board extends JComponent implements KeyListener {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
     @Override
@@ -92,25 +91,25 @@ public class Board extends JComponent implements KeyListener {
 
         if (skeleton1.isAlive) {
             skeleton1.draw(graphics);
-            if (skeleton1.isFighting(hero)) {
+            if (skeleton1.isAtTheSamePlace(hero)) {
                 graphics.drawString(skeleton1.toString(), 20, 600);
             }
         }
         if (skeleton2.isAlive) {
             skeleton2.draw(graphics);
-            if (skeleton2.isFighting(hero)) {
+            if (skeleton2.isAtTheSamePlace(hero)) {
                 graphics.drawString(skeleton2.toString(), 20, 600);
             }
         }
         if (skeleton3.isAlive) {
             skeleton3.draw(graphics);
-            if (skeleton3.isFighting(hero)) {
+            if (skeleton3.isAtTheSamePlace(hero)) {
                 graphics.drawString(skeleton3.toString(), 20, 600);
             }
         }
         if (boss.isAlive) {
             boss.draw(graphics);
-            if (boss.isFighting(hero)) {
+            if (boss.isAtTheSamePlace(hero)) {
                 graphics.drawString(boss.toString(), 20, 600);
             }
         }
@@ -140,13 +139,13 @@ public class Board extends JComponent implements KeyListener {
             hero.move(1, 0, map);
         } else if (e.getKeyCode() == KeyEvent.VK_SPACE) {
             for (Character monster : enemies) {
-                if (monster.isFighting(hero)) {
+                if (monster.isAtTheSamePlace(hero)) {
                     hero.strike(monster);
                 }
             }
         }
-
-        paint(getGraphics());
+        repaint();
+        //paint(getGraphics());
     }
 
     @Override

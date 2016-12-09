@@ -26,14 +26,14 @@ public abstract class Character extends GameObject {
     }
 
     public void figth(Character attacker) {
-        
+
         this.currentHealthPoint -= attacker.strikePoint;
         if (this.currentHealthPoint <= 0) {
             this.setAlive(false);
         }
     }
 
-    public abstract boolean isFighting(Hero hero);
+    public abstract boolean isAtTheSamePlace(Hero hero);
 
     public boolean isAlive() {
         return isAlive;
