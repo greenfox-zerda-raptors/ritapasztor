@@ -10,6 +10,8 @@ public abstract class Character extends GameObject {
     protected int currentHealthPoint;
     protected int defendPoint;
     protected int strikePoint;
+    protected boolean isAlive;
+
 
     protected Random random = new Random();
 
@@ -19,8 +21,27 @@ public abstract class Character extends GameObject {
         level = 1;
     }
 
+    public void strike(Character attacked) {
+        attacked.figth(this);
+    }
 
-    public abstract void strike();
+    public void figth(Character attacker) {
+        this.currentHealthPoint = maxHealthPoint - attacker.strikePoint;
+        if (this.currentHealthPoint <= 0) {
+            this.setAlive(false);
+        }
+    }
+    public boolean isFighting(){
+        
+    }
+
+    public boolean isAlive() {
+        return isAlive;
+    }
+
+    public void setAlive(boolean isAlive) {
+        this.isAlive = isAlive;
+    }
 
     @Override
     public String toString() {

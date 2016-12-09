@@ -7,6 +7,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Created by Rita on 2016.12.05..
@@ -37,6 +38,8 @@ public class Board extends JComponent implements KeyListener {
     BufferedImage leftImage;
     BufferedImage rightImage;
 
+    ArrayList<Character> enemies;
+
 
     public Board() {
         gameObjects = new ArrayList<>();
@@ -58,6 +61,10 @@ public class Board extends JComponent implements KeyListener {
         skeleton3 = new Skeleton(8, 0, "Misi");
         boss = new Boss();
 
+        this.addKeyListener(this);
+
+        enemies = new ArrayList<>(Arrays.asList(boss, skeleton1, skeleton2, skeleton3));
+
         try {
             upImage = ImageIO.read(new File("hero-up.png"));
             downImage = ImageIO.read(new File("hero-down.png"));
@@ -76,6 +83,11 @@ public class Board extends JComponent implements KeyListener {
 
         for (GameObject gameObject : gameObjects) {
             gameObject.draw(graphics);
+        }
+        if(skeleton1.isAlive) {
+            skeleton1.draw(graphics);
+            if(skeleton1.)
+
         }
         hero.draw(graphics);
         boss.draw(graphics);
@@ -109,21 +121,22 @@ public class Board extends JComponent implements KeyListener {
         } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
             hero.setImage(rightImage);
             hero.move(1, 0, map);
+        } else if (e.getKeyCode() == KeyEvent.VK_SPACE) {
+            for (Character monster : enemies) {
+                if (hero.posX == monster.posX && hero.posY == monster.posY) {
+                    hero.strike(monster);
+                }
+            }
         }
+
         paint(getGraphics());
-        System.out.println("menni fog :)");
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
         //System.out.println("menniFog");
     }
+
+
 }
-
-
-//        PositionedImage image2 = new PositionedImage("floor.png", 200, 100);
-//        image2.draw(graphics);
-//        PositionedImage image3 = new PositionedImage("floor.png", 100, 100);
-//        image3.draw(graphics);
-
 

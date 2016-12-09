@@ -12,8 +12,4 @@ public class Skeleton extends Character {
         this.name = name;
     }
 
-    @Override
-    public void strike() {
-
-    }
 }

@@ -18,8 +18,4 @@ public class Boss extends Character {
 
     }
 
-    @Override
-    public void strike() {
-
-    }
 }

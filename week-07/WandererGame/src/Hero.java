@@ -11,16 +11,12 @@ public class Hero extends Character {
     public Hero(String filename, int posX, int posY) {
         super("hero-down.png", posX, posY);
         int d6 = random.nextInt(6) + 1;
-        currentHealthPoint = 20 + 3 * d6;
+        maxHealthPoint = 20 + 3 * d6;
         defendPoint = 2 * d6;
         strikePoint = 5 + d6;
         name = "Superhero";
     }
 
-
-    @Override
-    public void strike() {
-    }
 
     public void move(int posX, int posY, boolean[][] map) {
         int newPosY = this.posY + posY;
