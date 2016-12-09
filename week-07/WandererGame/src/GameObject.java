@@ -20,16 +20,10 @@ public class GameObject {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-    }
-
-    public BufferedImage getImage() {
-        return image;
     }
 
     public void setImage(BufferedImage image) {
         this.image = image;
-
     }
 
     public void draw(Graphics graphics) {

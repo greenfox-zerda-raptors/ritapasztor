@@ -28,12 +28,5 @@ public class Boss extends Character {
         return false;
     }
 
-//    public boolean isFighting(Character hero, Character monster) {
-//        if (hero.posX == this.posX && hero.posY == this.posY) {
-//            System.out.println("van harc");
-//            return true;
-//        }
-//        return false;
-//    }
 
 }

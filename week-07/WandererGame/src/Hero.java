@@ -14,7 +14,7 @@ public class Hero extends Character {
         maxHealthPoint = 20 + 3 * d6;
         currentHealthPoint = 20 + 3 * d6;
         defendPoint = 2 * d6;
-        strikePoint = 5 + d6;
+        strikePoint = 1 + d6;
         name = "Superhero";
     }
 

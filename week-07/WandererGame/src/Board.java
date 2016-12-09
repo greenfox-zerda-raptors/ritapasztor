@@ -27,7 +27,7 @@ public class Board extends JComponent implements KeyListener {
             {true, true, false, false, false, false, false, true, false, true},
     };
 
-    ArrayList<GameObject> gameObjects; //tile will be gameObject, because hero is a tile as well
+    ArrayList<GameObject> gameObjects;
     Hero hero;
     Skeleton skeleton1;
     Skeleton skeleton2;
@@ -88,6 +88,7 @@ public class Board extends JComponent implements KeyListener {
             gameObject.draw(graphics);
         }
 
+        graphics.setColor(Color.black);
 
         if (skeleton1.isAlive) {
             skeleton1.draw(graphics);
@@ -107,34 +108,20 @@ public class Board extends JComponent implements KeyListener {
                 graphics.drawString(skeleton3.toString(), 20, 600);
             }
         }
-
         if (boss.isAlive) {
             boss.draw(graphics);
             if (boss.isFighting(hero)) {
                 graphics.drawString(boss.toString(), 20, 600);
             }
         }
-
-
         hero.draw(graphics);
-//        boss.draw(graphics);
-//        skeleton1.draw(graphics);
-//        skeleton2.draw(graphics);
-//        skeleton3.draw(graphics);
-
-        graphics.setColor(Color.black);
-
         graphics.drawString(hero.toString(), 20, 560);
-//        graphics.drawString(boss.toString(), 20, 580);
-//        graphics.drawString(skeleton1.toString(), 20, 600);
-//        graphics.drawString(skeleton2.toString(), 20, 620);
-//        graphics.drawString(skeleton3.toString(), 20, 640);
     }
 
     //KeyListener for arrows
     @Override
     public void keyTyped(KeyEvent e) {
-
+        //not needed here
     }
 
     @Override
@@ -153,11 +140,9 @@ public class Board extends JComponent implements KeyListener {
             hero.move(1, 0, map);
         } else if (e.getKeyCode() == KeyEvent.VK_SPACE) {
             for (Character monster : enemies) {
-                monster.isFighting(hero);
-                hero.strike(monster);
-//                if (hero.posX == monster.posX && hero.posY == monster.posY) {
-//                    hero.strike(monster);
-//                }
+                if (monster.isFighting(hero)) {
+                    hero.strike(monster);
+                }
             }
         }
 
@@ -166,7 +151,7 @@ public class Board extends JComponent implements KeyListener {
 
     @Override
     public void keyReleased(KeyEvent e) {
-        //System.out.println("menniFog");
+        //not needed here
     }
 
 

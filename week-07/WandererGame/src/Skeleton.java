@@ -13,15 +13,6 @@ public class Skeleton extends Character {
         this.name = name;
     }
 
-
-//    public boolean isFighting(Character hero, Character monster) {
-//        if (hero.posX == this.posX && hero.posY == this.posY) {
-//            System.out.println("van harc");
-//            return true;
-//        }
-//        return false;
-//    }
-
     @Override
     public boolean isFighting(Hero hero) {
         if (hero.posX == this.posX && hero.posY == this.posY) {
