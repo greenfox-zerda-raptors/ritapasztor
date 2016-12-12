@@ -3,9 +3,8 @@
  */
 public class MoneyMarket extends Account {
 
-
-    public MoneyMarket(int accountID, String firstName, String lastName, String address) {
-        super(accountID, firstName, lastName, address);
+    public MoneyMarket(int accountID, User user) {
+        super(accountID, user);
     }
 
     @Override

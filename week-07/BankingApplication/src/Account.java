@@ -24,7 +24,6 @@ public abstract class Account implements Transactions {
         return balance;
     }
 
-
     @Override
     public String toString() {
         return getClass().getSimpleName() + " type " +

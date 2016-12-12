@@ -3,8 +3,8 @@
  */
 public class CheckingAccount extends Account {
 
-    public CheckingAccount(int accountID, String firstName, String lastName, String address) {
-        super(accountID, firstName, lastName, address);
+    public CheckingAccount(int accountID, User user) {
+        super(accountID, user);
     }
 
     @Override

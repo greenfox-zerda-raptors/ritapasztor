@@ -3,9 +3,8 @@
  */
 public class SavingsAccount extends Account {
 
-
-    public SavingsAccount(int accountID, String firstName, String lastName, String address) {
-        super(accountID, firstName, lastName, address);
+    public SavingsAccount(int accountID, User user) {
+        super(accountID, user);
     }
 
     @Override
