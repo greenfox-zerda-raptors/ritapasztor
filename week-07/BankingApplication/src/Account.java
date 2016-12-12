@@ -1,35 +1,27 @@
 /**
  * Created by Rita on 2016.12.11..
  */
-public abstract class Account {
+public abstract class Account implements Transactions {
     private int accountID;
-    private String firstName;
-    private String lastName;
-    private String address;
-    private double balance;
+    private User user;
+    private double balance = 0;
 
-    public Account(int accountID, String firstName, String lastName, String address) {
-        balance = 0;
+    public Account(int accountID, User user) {
         this.accountID = accountID;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.address = address;
-
+        this.user = user;
     }
 
     public abstract void audit();
 
+    @Override
     public void deposit(int depositAmount) {
         balance += depositAmount;
-        System.out.println("On " + firstName + "'s account, new balance is " + balance + " EUR");
+        System.out.println("On " + user.getFirstName() + "'s account, new balance is " + balance + " EUR");
     }
 
+    @Override
     public double getBalance() {
         return balance;
-    }
-
-    public void setBalance(double balance) {
-        this.balance = balance;
     }
 
 
@@ -37,11 +29,11 @@ public abstract class Account {
     public String toString() {
         return getClass().getSimpleName() + " type " +
                 "account no. " + accountID +
-                ", " + firstName + " " + lastName + " " +
+                ", " + user.getFirstName() + " " + user.getLastName() + " " +
                 ", account balance = " + balance + " EUR.";
     }
 
-
+    @Override
     public void transfer(int transferredAmount, Account accountTo) {
         this.balance -= transferredAmount;
         accountTo.deposit(transferredAmount);
