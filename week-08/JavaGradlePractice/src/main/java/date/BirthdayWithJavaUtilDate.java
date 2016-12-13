@@ -3,9 +3,11 @@ package date;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public final class BirthdayWithJavaUtilDate implements BirthdayCalculator<Date> {
 
@@ -55,11 +57,15 @@ public final class BirthdayWithJavaUtilDate implements BirthdayCalculator<Date> 
 
     @Override
     public int calculateDaysToNextAnniversary(Date date) {
-        int i = (int) new Date().getTime();
-        int j = (int) date.getTime();
+        Date today = Calendar.getInstance().getTime();
+        date.setYear(today.getYear());
+        if (!date.after(today)) {
+            date.setYear(date.getYear() + 1);
+        }
+        long diff = date.getTime() - today.getTime();
 
+        return (int) TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
         // TODO - the number of days remaining to the next anniversary of 'date' (e.g. if tomorrow, return 1)
-        return -1;
     }
 
     public static void main(String[] args) {
