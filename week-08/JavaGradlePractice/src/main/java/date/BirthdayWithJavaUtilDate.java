@@ -3,7 +3,9 @@ package date;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.Date;
+import java.util.Locale;
+import java.util.Scanner;
 
 public final class BirthdayWithJavaUtilDate implements BirthdayCalculator<Date> {
 
@@ -37,15 +39,25 @@ public final class BirthdayWithJavaUtilDate implements BirthdayCalculator<Date> 
 
     @Override
     public int calculateAgeInYears(Date birthday) {
-        
 
-
+        DateFormat years = new SimpleDateFormat("yyyy");
+        DateFormat monthDay = new SimpleDateFormat("MMdd");
+        Date today = new Date();
+        int todayYear = Integer.parseInt(years.format(today));
+        int birthdayYear = Integer.parseInt(years.format(birthday));
+        if (Integer.parseInt(monthDay.format(today)) >= Integer.parseInt(monthDay.format(birthday))) {
+            return todayYear - birthdayYear;
+        } else {
+            return todayYear - birthdayYear - 1;
+        }
         // TODO - return how many years age the input date 'birthday' was
-        return -1;
     }
 
     @Override
     public int calculateDaysToNextAnniversary(Date date) {
+        int i = (int) new Date().getTime();
+        int j = (int) date.getTime();
+
         // TODO - the number of days remaining to the next anniversary of 'date' (e.g. if tomorrow, return 1)
         return -1;
     }
