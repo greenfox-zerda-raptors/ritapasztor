@@ -23,17 +23,17 @@ public class Carrier {
         return damage;
     }
 
-    public void addAircraft(String type){
-        if(type.equals("F16")) {
+    public void addAircraft(String type) {
+        if (type.equals("F16")) {
             aircrafts.add(new F16());
         } else {
             aircrafts.add(new F35());
         }
     }
 
-    public void fill(){
-        for (Aircraft a: aircrafts){
-            totalAmmo= a.refill(totalAmmo);
+    public void fill() {
+        for (Aircraft a : aircrafts) {
+            totalAmmo = a.refill(totalAmmo);
         }
     }
 
@@ -42,9 +42,9 @@ public class Carrier {
         StringBuilder sb = new StringBuilder("Aircraft count: ").append(aircrafts.size()).append(", Ammo storage")
                 .append(totalAmmo).append(", Total damage: ").append(getAllDamage()).append(", Health remaining: ").append(healthPoints)
                 .append("\n").append("Aircrafts: \n");
-                for (Aircraft a : aircrafts){
-                    sb.append(a.toString());
-                    sb.append("\n");
+        for (Aircraft a : aircrafts) {
+            sb.append(a.toString());
+            sb.append("\n");
         }
         return sb.toString();
     }

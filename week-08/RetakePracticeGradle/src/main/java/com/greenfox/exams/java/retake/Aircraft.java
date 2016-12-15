@@ -31,8 +31,8 @@ public abstract class Aircraft {
         }
     }
 
-    public int getAllDamage(){
-        return getbaseDamage()*getmaxAmmo();
+    public int getAllDamage() {
+        return getbaseDamage() * getmaxAmmo();
     }
 
     @Override
