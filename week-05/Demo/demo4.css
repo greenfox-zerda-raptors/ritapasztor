@@ -1,0 +1,115 @@
+header {
+  position: relative;
+  flex-basis: 100%;
+}
+body {
+  line-height: 28px;
+  font-family: "Patrick Hand","Coming Soon",sans-serif;
+  font-size: 25px;
+  color: 	rgb(187, 0, 94);
+  background-color: rgb(192, 192, 192);
+}
+.headlines {
+  position: absolute;
+  bottom: 45%;
+  padding-left: 450px;
+  font-size: 40px;
+  color: black;
+  width: 600px;
+  color: 	rgb(187, 0, 94);
+  opacity: 1;
+}
+h2 {
+  font-size: 30px;
+}
+.toptext .toplist {
+  font-size: 25px;
+  }
+
+.previously {
+  border: 2px solid white;
+  padding-left: 5px;
+  border-radius: 5px;
+}
+.previously p{
+padding-left: 10px;
+margin: 15px;
+}
+.backgroundimage {
+  position: relative;
+  background-image: url('roller-coaster.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-left:0;
+  opacity: 0.6;
+  height: 400px;
+  width: 100%;
+  }
+blockquote {
+  background: white;
+  border: 2px solid white;
+  margin: 1.5em -35px;
+  quotes: "\201C""\201D";
+  position: relative;
+  font-family: "Patrick Hand","Coming Soon",sans-serif;
+  color: rgb(128,128,128);
+  border-radius: 5px;
+}
+blockquote::before {
+  position: absolute;
+  top: 40px;
+  left: 10px;
+  content: open-quote;
+  font-size: 110px;
+}
+blockquote p {
+  padding: 30px 0;
+  display: block;
+  font-size: 40px;
+  font-weight: bold;
+  margin: 0 10%;
+}
+blockquote em{
+  font-style: normal;
+  font-size: 20px;
+  float: right;
+}
+article {
+  width: 550px;
+  margin: 30px auto;
+}
+h4 {
+  font-size: 25px;
+  font-weight: bolder;
+}
+h5 {
+  font-size: 28px;
+  font-weight:  bolder;
+  margin: 0;
+}
+h6 {
+  font-style: italic;
+  font-size: 21px;
+  line-height: 24px;
+  margin: 0;
+}
+ul {
+  list-style-type: disc;
+}
+#yet {
+  position: absolute;
+  border: 2px solid rgb(47, 79, 79);
+  border-radius: 30px;
+  padding: 10px;
+  margin/border-bottom: 10px;
+  top: 20px;
+  left: 300px;
+  /*transform: translateX(10px) scaleX(2) rotateZ(180deg);*/
+  transition: 2s;
+}
+
+#yet:hover {
+  /*transition: 0.5s 0.5s 1s;*/
+  transform: translateX(10px) rotateZ(360deg);
+}
