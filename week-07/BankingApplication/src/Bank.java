@@ -40,6 +40,7 @@ public class Bank {
             System.out.println(account.toString());
         }
     }
+
     public void manage() {
         //this way I cannot see the accounts, I would need a map for that (hashmap)
 

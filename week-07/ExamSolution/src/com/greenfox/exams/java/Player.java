@@ -22,7 +22,8 @@ public class Player {
         return sum;
     }
 
-    public void add(Card drawn) {
+    public void add(Card drawn) { //ez a method a levegoben levo huzott kartyat hozzaadja a played kartyat listahoz
         played.add(drawn);
     }
+
 }
