@@ -64,6 +64,7 @@ public class DrawToImage extends JFrame implements ActionListener {
             requestFocus();
             graphics.drawImage(image, 7, 25, this);
         }
+
     }
 
 
