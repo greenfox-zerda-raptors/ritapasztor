@@ -30,4 +30,14 @@ public abstract class Aircraft {
             return fillingAmmo - ammoNeeded;
         }
     }
+
+    public int getAllDamage(){
+        return getbaseDamage()*getmaxAmmo();
+    }
+
+    @Override
+    public String toString() {
+        return "Type " + getClass().getSimpleName() + ", Ammo: " + currentAmmo +
+                ", BaseDamage: " + getbaseDamage() + ", All damage: " + getAllDamage();
+    }
 }
