@@ -1,12 +1,15 @@
 import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.field.ForeignCollectionField;
 import com.j256.ormlite.table.DatabaseTable;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 /**
  * Created by Rita on 2016.12.15..
  */
-@DatabaseTable
+
+@DatabaseTable(tableName = "User")
 public class User {
     @DatabaseField(generatedId = true)
     private int userId;
@@ -16,11 +19,13 @@ public class User {
     private String lastName;
     @DatabaseField
     private String address;
-    @DatabaseField(foreign = true)
-    private ArrayList<Account> accounts = new ArrayList<Account>();
+    @ForeignCollectionField(eager = true)
+    private Collection<Account> accounts;
 
     private String type;
 
+    public User() {
+    }
 
     public User(String firstName, String lastName, String address) {
         this.firstName = firstName;
@@ -29,14 +34,17 @@ public class User {
     }
 
     public void addAccount(String type) {
+        if (accounts == null) {
+            accounts = new ArrayList<Account>();
+        }
         if (type.equals("S")) {
-            accounts.add(new Account("SavingsAccount"));
+            accounts.add(new Account("SavingsAccount", this));
         }
         if (type.equals("C")) {
-            accounts.add(new Account("CheckingAccount"));
+            accounts.add(new Account("CheckingAccount", this));
         }
         if (type.equals("M")) {
-            accounts.add(new Account("MoneyMarket"));
+            accounts.add(new Account("MoneyMarket", this));
         }
     }
 
@@ -56,6 +64,7 @@ public class User {
         return type;
     }
 
+
     public int getUserId() {
         return userId;
     }
@@ -71,4 +80,9 @@ public class User {
         }
         return sb.toString();
     }
+
+    public Collection<Account> getAccounts() {
+        return accounts;
+    }
+
 }

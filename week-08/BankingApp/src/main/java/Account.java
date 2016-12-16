@@ -1,11 +1,10 @@
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
-import java.util.ArrayList;
-
 /**
  * Created by Rita on 2016.12.14..
  */
+
 @DatabaseTable(tableName = "Account")
 public class Account implements Transactions {
     @DatabaseField(generatedId = true)
@@ -14,14 +13,15 @@ public class Account implements Transactions {
     String type;
     @DatabaseField
     int balance = 0;
-
-    ArrayList<Account> accounts;
+    @DatabaseField(foreign = true, foreignAutoRefresh = true)
+    private User user;
 
     public Account() {
     }
 
-    public Account(String type) {
+    public Account(String type, User user) {
         this.type = type;
+        this.user = user;
     }
 
     public void deposit(int depositAmount) {
@@ -44,14 +44,14 @@ public class Account implements Transactions {
 
     }
 
-    public void audit() {
-
-    }
 
     public String getType() {
         return type;
     }
 
+    public int getAccountID() {
+        return accountID;
+    }
 
     public void setType(String type) {
         this.type = type;

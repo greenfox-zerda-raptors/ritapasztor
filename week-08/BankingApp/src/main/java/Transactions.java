@@ -11,6 +11,4 @@ public interface Transactions {
 
     void withdraw(int withdrawnAmount);
 
-    void audit();
-
 }
