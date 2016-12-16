@@ -19,10 +19,25 @@ public class User {
     @DatabaseField(foreign = true)
     private ArrayList<Account> accounts = new ArrayList<Account>();
 
+    private String type;
+
+
     public User(String firstName, String lastName, String address) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
+    }
+
+    public void addAccount(String type) {
+        if (type.equals("S")) {
+            accounts.add(new Account("SavingsAccount"));
+        }
+        if (type.equals("C")) {
+            accounts.add(new Account("CheckingAccount"));
+        }
+        if (type.equals("M")) {
+            accounts.add(new Account("MoneyMarket"));
+        }
     }
 
     public String getFirstName() {
@@ -35,5 +50,25 @@ public class User {
 
     public String getAddress() {
         return address;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder("UserId: ");
+        sb.append(userId).append(", firstName: ").append(firstName)
+                .append('\'').append(", accounts: ");
+        for (Account a : accounts) {
+            sb.append(a);
+            sb.append(" \n");
+        }
+        return sb.toString();
     }
 }

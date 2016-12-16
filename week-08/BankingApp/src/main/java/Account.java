@@ -1,6 +1,8 @@
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
+import java.util.ArrayList;
+
 /**
  * Created by Rita on 2016.12.14..
  */
@@ -13,6 +15,8 @@ public class Account implements Transactions {
     @DatabaseField
     int balance = 0;
 
+    ArrayList<Account> accounts;
+
     public Account() {
     }
 
@@ -20,13 +24,11 @@ public class Account implements Transactions {
         this.type = type;
     }
 
-    @Override
     public void deposit(int depositAmount) {
         balance += depositAmount;
         //System.out.println("On " + user.getFirstName() + "'s account, new balance  is " + balance + " EUR");
     }
 
-    @Override
     public double getBalance() {
         return balance;
     }
@@ -37,6 +39,8 @@ public class Account implements Transactions {
     }
 
     public void withdraw(int withdrawnAmount) {
+        this.balance -= withdrawnAmount;
+        System.out.println(withdrawnAmount + " withdrawn, current balance: " + this.balance);
 
     }
 
@@ -53,9 +57,7 @@ public class Account implements Transactions {
         this.type = type;
     }
 
-
-    @Override
-    public String toString() {
-        return "type: " + type;
-    }
+//    public String toString() {
+//        return
+//    }
 }
