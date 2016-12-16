@@ -1,6 +1,7 @@
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.field.ForeignCollectionField;
 import com.j256.ormlite.table.DatabaseTable;
+import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -9,6 +10,8 @@ import java.util.Collection;
  * Created by Rita on 2016.12.15..
  */
 
+
+@Getter
 @DatabaseTable(tableName = "User")
 public class User {
     @DatabaseField(generatedId = true)
@@ -50,22 +53,22 @@ public class User {
         }
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public String getType() {
-        return type;
-    }
-
+//    public String getFirstName() {
+//        return firstName;
+//    }
+//
+//    public String getLastName() {
+//        return lastName;
+//    }
+//
+//    public String getAddress() {
+//        return address;
+//    }
+//
+//    public String getType() {
+//        return type;
+//    }
+//
 
     public int getUserId() {
         return userId;

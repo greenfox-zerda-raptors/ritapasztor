@@ -26,14 +26,12 @@ public class App {
 
         User leia = new User("Leia", "Organa", "Alderaan planet 1");
         users.add(leia);
-
         leia.addAccount("C");
         leia.addAccount("S");
         database.createUserIfNotExists(leia);
 
         User rey = new User("Rey", null, "Jakku planet 4");
         users.add(rey);
-
         rey.addAccount("C");
         rey.addAccount("M");
         database.createUserIfNotExists(rey);

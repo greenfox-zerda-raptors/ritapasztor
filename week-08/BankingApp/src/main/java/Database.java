@@ -10,6 +10,7 @@ import java.util.List;
 /**
  * Created by Rita on 2016.12.16..
  */
+
 public class Database {
     private Dao<User, Integer> userDao;
     private Dao<Account, Integer> accountDao;

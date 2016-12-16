@@ -1,10 +1,15 @@
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * Created by Rita on 2016.12.14..
  */
 
+
+@Getter
+@Setter
 @DatabaseTable(tableName = "Account")
 public class Account implements Transactions {
     @DatabaseField(generatedId = true)
@@ -49,16 +54,16 @@ public class Account implements Transactions {
 
     }
 
-    public String getType() {
-        return type;
-    }
+//    public String getType() {
+//        return type;
+//    }
 
     public int getAccountID() {
         return accountID;
     }
 
-    public void setType(String type) {
-        this.type = type;
-    }
+//    public void setType(String type) {
+//        this.type = type;
+//    }
 
 }
