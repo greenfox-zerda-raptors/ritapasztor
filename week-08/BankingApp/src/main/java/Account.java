@@ -12,7 +12,7 @@ public class Account implements Transactions {
     @DatabaseField
     String type;
     @DatabaseField
-    int balance = 0;
+    int balance;
     @DatabaseField(foreign = true, foreignAutoRefresh = true)
     private User user;
 
@@ -22,6 +22,11 @@ public class Account implements Transactions {
     public Account(String type, User user) {
         this.type = type;
         this.user = user;
+        if (type.equals("SavingsAccount")) {
+            balance = 1000;
+        } else {
+            balance = 0;
+        }
     }
 
     public void deposit(int depositAmount) {
@@ -44,7 +49,6 @@ public class Account implements Transactions {
 
     }
 
-
     public String getType() {
         return type;
     }
@@ -57,7 +61,4 @@ public class Account implements Transactions {
         this.type = type;
     }
 
-//    public String toString() {
-//        return
-//    }
 }

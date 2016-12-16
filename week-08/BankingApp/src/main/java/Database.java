@@ -29,12 +29,18 @@ public class Database {
         connectionSource.close();
     }
 
-    public void createUserIfNotExists(User usr) throws SQLException {
-        if (userDao.queryForId(usr.getUserId()) == null) {
-            userDao.create(usr);
-            for (Account acc : usr.getAccounts()) {
-                createAccountIfNotExists(acc);
+    public void createUserIfNotExists(User usr) {
+        try {
+            if (userDao.queryForId(usr.getUserId()) == null) {
+                userDao.create(usr);
+                if (usr.getAccounts() != null) {
+                    for (Account acc : usr.getAccounts()) {
+                        createAccountIfNotExists(acc);
+                    }
+                }
             }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 

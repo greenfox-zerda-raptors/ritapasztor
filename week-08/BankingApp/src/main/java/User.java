@@ -25,18 +25,20 @@ public class User {
     private String type;
 
     public User() {
+        if (accounts == null) {
+            accounts = new ArrayList<Account>();
+        }
     }
 
     public User(String firstName, String lastName, String address) {
+        this();
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
     }
 
     public void addAccount(String type) {
-        if (accounts == null) {
-            accounts = new ArrayList<Account>();
-        }
+
         if (type.equals("S")) {
             accounts.add(new Account("SavingsAccount", this));
         }
