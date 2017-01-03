@@ -1,4 +1,4 @@
-package com.example;
+package com.greenfox;
 
 import lombok.Data;
 

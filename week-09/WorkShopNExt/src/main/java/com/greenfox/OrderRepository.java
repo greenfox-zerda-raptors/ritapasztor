@@ -7,6 +7,6 @@ import java.util.List;
 /**
  * Created by Rita on 2016.12.22..
  */
-public interface CustomerRepository extends CrudRepository<Customer, Long> {
-    List<Customer> findByLastName(String lastName);
+public interface OrderRepository extends CrudRepository<Customer, Long> {
+    List<Customer> findByLastName(Customer customer);
 }
