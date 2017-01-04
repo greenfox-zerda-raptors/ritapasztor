@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>The Reddit Application by Rita</title>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+<a href="new">Add new post</a>
+<h1>Posts</h1>
+<table id="posts_list">
+    <thead>
+    <tr>
+        <th>Post ID</th>
+        <th>Post Title</th>
+        <th>Post Content</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="post:${posts}">
+        <td th:text="${post.postId}"></td>
+        <td th:text="${post.postTitle}"></td>
+        <td th:text="${post.message}">My post is about my Reddit App</td>
+    </tr>
+    </tbody>
+</table>
+
+
+</body>
+</html>
