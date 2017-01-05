@@ -12,6 +12,6 @@ public class HomeController {
 
     @RequestMapping("/")
     public String helloWorld() {
-        return "redirect:/list";
+        return "redirect:/posts";
     }
 }
