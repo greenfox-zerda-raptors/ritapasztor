@@ -15,4 +15,9 @@ public class PostController {
     public String index() {
         return "posts/list";
     }
+
+    @RequestMapping(value = "/add", method = RequestMethod.GET)
+    public String addPost() {
+        return "posts/add";
+    }
 }
