@@ -1,13 +1,16 @@
 <!DOCTYPE HTML>
-<html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <title>New post to Reddit</title>
     <meta http-equiv="Content-Type" message="text/html; charset=UTF-8"/>
 </head>
 <body>
-<form>
-    <h3>Content:</h3>
-    <input type="text" name="message"/>
+<form action="#" th:action="@{posts/new}" th:object="${post}" th:method="post">
+    <h3>New Post</h3>
+    <label>Title:</label>
+    <input type="text" name="title" th:field="${post.postTitle}"/>
+    <label>Content: </label>
+    <input type="text" name="message" th:field="${post.message}"/>
     <input type="submit" value="Submit"/>
 </form>
 

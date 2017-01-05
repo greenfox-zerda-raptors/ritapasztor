@@ -22,6 +22,12 @@ public class Post {
         this.message = message;
     }
 
+    public Post(String title, String message) {
+        this.postTitle = title;
+        this.message = message;
+
+    }
+
 
     public int getScore() {
         return score;

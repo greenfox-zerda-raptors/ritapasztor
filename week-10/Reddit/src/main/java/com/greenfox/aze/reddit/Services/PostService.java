@@ -14,11 +14,21 @@ import java.util.List;
 @Service
 public class PostService {
 
-    @Autowired
+
     PostRepository repository;
+
+    @Autowired
+    public PostService(PostRepository repository) {
+        this.repository = repository;
+    }
 
     public List<Post> getAllPosts() {
         return (List<Post>) repository.findAll();
+    }
+
+
+    public void addNewPost(String title, String message) {
+        repository.save(new Post(title, message));
     }
 
 
