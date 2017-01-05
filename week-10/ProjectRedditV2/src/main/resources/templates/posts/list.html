@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8"/>
     <title>Hello Super, be a Hero! ;)</title>
@@ -7,5 +7,17 @@
 <body>
 <a href="add">Add new post</a>
 <h1>Hello Super, be a Hero! ;)</h1>
+<table>
+    <tr>
+        <td>Id</td>
+        <td>Score</td>
+        <td>Content</td>
+    </tr>
+    <tr th:each="post:${posts}">
+        <td th:text="${post.id}"></td>
+        <td th:text="${post.score}"></td>
+        <td th:text="${post.content}"></td>
+    </tr>
+</table>
 </body>
 </html>
