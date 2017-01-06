@@ -4,10 +4,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  * Created by Rita on 2017.01.05..
  */
+
 
 @Entity
 public class Post {
@@ -18,11 +21,14 @@ public class Post {
     private String content;
     private int score;
 
+    private LocalDateTime dateTime;
+
     public Post() {
     }
 
     public Post(String content) {
         this.content = content;
+        this.dateTime = LocalDateTime.now();
     }
 
     public long getId() {
@@ -47,5 +53,10 @@ public class Post {
 
     public void setScore(int score) {
         this.score = score;
+    }
+
+    public String formatDateTime() {
+        return dateTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
+
     }
 }

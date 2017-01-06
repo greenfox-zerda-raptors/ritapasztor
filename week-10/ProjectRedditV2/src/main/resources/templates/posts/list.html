@@ -10,12 +10,14 @@
 <table>
     <tr>
         <td>Id</td>
+        <td>Date</td>
         <td>Score</td>
         <td colspan="2">Action</td>
         <td>Content</td>
     </tr>
     <tr th:each="post:${posts}">
         <td th:text="${post.id}"></td>
+        <td th:text="${post.formatDateTime()}"></td>
         <td th:text="${post.score}"></td>
         <td><a th:href="@{'/posts/{id}/upvote'(id=${post.id})}">+</a></td>
         <td><a th:href="@{'/posts/{id}/downvote'(id=${post.id})}">-</a></td>
