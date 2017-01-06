@@ -57,6 +57,5 @@ public class Post {
 
     public String formatDateTime() {
         return dateTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
-
     }
 }

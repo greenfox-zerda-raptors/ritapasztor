@@ -20,7 +20,7 @@ public class ProjectRedditV2Application implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         for (int i = 1; i < 6; i++) {
-            repository.save(new Post("My new post" + (i)));
+            repository.save(new Post("lor sit amet, mei an legendos mandamus sadipscing, graecis consequuntur et mea. Usu te sint euripidis, ius elitr nominati ne. "));
         }
     }
 }

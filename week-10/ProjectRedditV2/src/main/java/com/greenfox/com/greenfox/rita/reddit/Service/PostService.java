@@ -16,7 +16,8 @@ public class PostService {
     PostRepository repository;
 
     public List<Post> listAllPosts() {
-        return (List<Post>) repository.findAll();
+        //return (List<Post>) repository.findAll();
+        return (List<Post>) repository.findAllByOrderByScoreDesc();
     }
 
     public void createNewPost(Post newPost) {
@@ -25,7 +26,6 @@ public class PostService {
 
     public void upvote(long id) {
         vote(id, 1);
-
     }
 
     public void downvote(long id) {
