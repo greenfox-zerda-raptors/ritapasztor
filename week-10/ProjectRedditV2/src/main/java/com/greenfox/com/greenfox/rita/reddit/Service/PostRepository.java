@@ -7,4 +7,5 @@ import org.springframework.data.repository.CrudRepository;
  * Created by Rita on 2017.01.05..
  */
 public interface PostRepository extends CrudRepository<Post, Long> {
+
 }
