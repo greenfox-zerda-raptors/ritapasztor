@@ -2,22 +2,28 @@ package com.greenfox.com.greenfox.rita.reddit.Service;
 
 import com.greenfox.com.greenfox.rita.reddit.Model.Post;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * Created by Rita on 2017.01.06..
  */
 @Service
+@Transactional
 public class PostService {
 
     @Autowired
     PostRepository repository;
 
-    public List<Post> listAllPosts() {
-        //return (List<Post>) repository.findAll();
-        return (List<Post>) repository.findAllByOrderByScoreDesc();
+//    public List<Post> listAllPosts() {
+//        //return (List<Post>) repository.findAll();
+//        return repository.findAllByOrderByScoreDesc();
+//    }
+
+    public Page<Post> listAllPosts() {
+        return repository.findByOrderByScoreDesc(new PageRequest(1, 10));
     }
 
     public void createNewPost(Post newPost) {
