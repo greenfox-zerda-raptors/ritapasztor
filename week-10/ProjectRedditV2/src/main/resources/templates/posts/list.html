@@ -2,19 +2,36 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8"/>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="icon" href="../../favicon.ico"/>
+
     <title>Hello Super, be a Hero! ;)</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../static/css/bootstrap.min.css" rel="stylesheet"/>
+    <!-- Bootstrap theme -->
+    <link href="../../static/css/bootstrap-theme.min.css" rel="stylesheet"/>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+
+    <!-- Custom styles for this template -->
+    <link href="list.css" rel="stylesheet"/>
 </head>
 <body>
-<a href="posts/add">Add new post</a>
+<button type="button" class="btn btn-info" href="posts/add">Add new post</button>
 <h1>Hello Super, be a Hero! ;)</h1>
-<table>
+<table class="table">
+    <thead class="thead-default">
     <tr>
         <td>Id</td>
         <td>Date</td>
         <td>Score</td>
         <td colspan="2">Action</td>
         <td>Content</td>
+        <td>Actions</td>
     </tr>
+    </thead>
     <tr th:each="post:${posts}">
         <td th:text="${post.id}"></td>
         <td th:text="${post.formatDateTime()}"></td>
@@ -22,11 +39,27 @@
         <td><a th:href="@{'/posts/{id}/upvote'(id=${post.id})}">+</a></td>
         <td><a th:href="@{'/posts/{id}/downvote'(id=${post.id})}">-</a></td>
         <td th:text="${post.content}"></td>
+        <td><a th:href="@{'/posts/{id}/delete' (id=${post.id})}">Delete</a></td>
     </tr>
 </table>
 <div>
     <tr>
-        <td><a</td>
+        <td>
+            <button type="button" class="btn btn-info" href="#" th:href="@{'posts/?page=1&amp;count=10'}">first</button>
+        </td>
+        <td>
+            <button type="button" class="btn btn-info" href="#"
+                    th:href="@{'/posts/?page=' + ${posts.getNumber()-1} + '&amp;count=10' }">&lt;&lt;</button>
+        </td>
+        <td>
+            <button type="button" class="btn btn-info" href="#"
+                    th:href="@{'/posts/?page=' + ${posts.getNumber()+1} + '&amp;count=10' }">&gt;&gt;</button>
+        </td>
+        <td>
+            <button type="button" class="btn btn-info" href="#"
+                    th:href="@{'/posts/?page=' + ${posts.getTotalPages()-1} + '&amp;count=10' }">last
+            </button>
+        </td>
     </tr>
 </div>
 </body>

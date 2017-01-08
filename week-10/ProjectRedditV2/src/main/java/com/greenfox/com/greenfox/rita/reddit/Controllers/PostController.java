@@ -22,8 +22,10 @@ public class PostController {
     private PostService service;
 
     @RequestMapping(value = "", method = RequestMethod.GET)
-    public String index(Model model) {
-        model.addAttribute("posts", service.listAllPosts());
+    public String index(Model model,
+                        @RequestParam(name = "page", defaultValue = "0") Integer page,
+                        @RequestParam(name = "count", defaultValue = "10") Integer limit) {
+        model.addAttribute("posts", service.listAllPosts(page, limit));
         return "posts/list";
     }
 
@@ -47,6 +49,12 @@ public class PostController {
     @RequestMapping(value = "/{id}/downvote", method = RequestMethod.GET)
     private String downvote(@PathVariable long id) {
         service.downvote(id);
+        return "redirect:/posts";
+    }
+
+    @RequestMapping(value = "/{id}/delete", method = RequestMethod.GET)
+    private String delete(@PathVariable long id) {
+        service.deletePost(id);
         return "redirect:/posts";
     }
 }

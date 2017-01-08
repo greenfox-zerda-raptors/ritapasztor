@@ -22,8 +22,8 @@ public class PostService {
 //        return repository.findAllByOrderByScoreDesc();
 //    }
 
-    public Page<Post> listAllPosts() {
-        return repository.findByOrderByScoreDesc(new PageRequest(1, 10));
+    public Page<Post> listAllPosts(int page, int limit) {
+        return repository.findByOrderByScoreDesc(new PageRequest(page, limit));
     }
 
     public void createNewPost(Post newPost) {
@@ -54,5 +54,9 @@ public class PostService {
 //        } else {
 //            return currentScore + scoreChange;
 //        }
+
+    public void deletePost(long id) {
+        repository.delete(id);
+    }
 
 }
