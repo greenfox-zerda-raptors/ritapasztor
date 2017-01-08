@@ -14,13 +14,12 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class PostService {
 
-    @Autowired
-    PostRepository repository;
+    private PostRepository repository;
 
-//    public List<Post> listAllPosts() {
-//        //return (List<Post>) repository.findAll();
-//        return repository.findAllByOrderByScoreDesc();
-//    }
+    @Autowired
+    public PostService(PostRepository repository) {
+        this.repository = repository;
+    }
 
     public Page<Post> listAllPosts(int page, int limit) {
         return repository.findByOrderByScoreDesc(new PageRequest(page, limit));
@@ -36,8 +35,6 @@ public class PostService {
 
     public void downvote(long id) {
         vote(id, -1);
-//        int score = repository.findOne(id).getScore();
-//        score += -1;
     }
 
     public void vote(long id, int scoreChange) {
@@ -45,15 +42,7 @@ public class PostService {
         int changedScore = post.getScore() + scoreChange;
         post.setScore(changedScore);
         repository.save(post);
-
     }
-//        if (currentScore == 0 && scoreChange > 0) {
-//            return currentScore += scoreChange;
-//        } else if (currentScore == 0 && scoreChange < 0) {
-//            return currentScore;
-//        } else {
-//            return currentScore + scoreChange;
-//        }
 
     public void deletePost(long id) {
         repository.delete(id);

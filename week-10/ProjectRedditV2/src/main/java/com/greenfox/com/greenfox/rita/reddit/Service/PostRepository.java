@@ -10,7 +10,4 @@ import org.springframework.data.repository.PagingAndSortingRepository;
  */
 public interface PostRepository extends PagingAndSortingRepository<Post, Long> {
     Page<Post> findByOrderByScoreDesc(Pageable pageable);
-    //List<Post> findAllByOrderByScoreDesc();
-
-
 }

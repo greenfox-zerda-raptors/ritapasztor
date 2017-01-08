@@ -19,7 +19,7 @@
     <link href="list.css" rel="stylesheet"/>
 </head>
 <body>
-<button type="button" class="btn btn-info" href="posts/add">Add new post</button>
+<button type="button" class="btn btn-link"><a href="posts/add">Add new post</a></button>
 <h1>Hello Super, be a Hero! ;)</h1>
 <table class="table">
     <thead class="thead-default">
@@ -43,24 +43,20 @@
     </tr>
 </table>
 <div>
-    <tr>
-        <td>
-            <button type="button" class="btn btn-info" href="#" th:href="@{'posts/?page=1&amp;count=10'}">first</button>
-        </td>
-        <td>
-            <button type="button" class="btn btn-info" href="#"
-                    th:href="@{'/posts/?page=' + ${posts.getNumber()-1} + '&amp;count=10' }">&lt;&lt;</button>
-        </td>
-        <td>
-            <button type="button" class="btn btn-info" href="#"
-                    th:href="@{'/posts/?page=' + ${posts.getNumber()+1} + '&amp;count=10' }">&gt;&gt;</button>
-        </td>
-        <td>
-            <button type="button" class="btn btn-info" href="#"
-                    th:href="@{'/posts/?page=' + ${posts.getTotalPages()-1} + '&amp;count=10' }">last
-            </button>
-        </td>
-    </tr>
+    <nav aria-label="Page navigaton example">
+        <ul class="pagination">
+            <li class="page-item"><a class="page-link" href="#" th:href="@{'posts/?page=1&amp;count=10'}">first</a>>
+            </li>
+            <li class="page-item"><a href="#" th:href="@{'/posts/?page=' + ${posts.getNumber()-1} + '&amp;count=10' }">
+                &lt;&lt;</a></li>
+            <li class="page-item"><a href="#"
+                                     th:href="@{'/posts/?page=' + ${posts.getNumber()+1} + '&amp;count=10' }">
+                &gt;&gt;</a></li>
+            <li class="page-item"><a href="#"
+                                     th:href="@{'/posts/?page=' + ${posts.getTotalPages()-1} + '&amp;count=10' }">last</a>
+            </li>
+        </ul>
+    </nav>
 </div>
 </body>
 </html>

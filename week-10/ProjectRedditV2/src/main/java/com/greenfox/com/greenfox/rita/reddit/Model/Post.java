@@ -1,5 +1,10 @@
 package com.greenfox.com.greenfox.rita.reddit.Model;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,8 +16,12 @@ import java.time.format.DateTimeFormatter;
  * Created by Rita on 2017.01.05..
  */
 
-
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+
 public class Post {
 
     @Id
@@ -23,36 +32,9 @@ public class Post {
 
     private LocalDateTime dateTime;
 
-    public Post() {
-    }
-
     public Post(String content) {
         this.content = content;
         this.dateTime = LocalDateTime.now();
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-    public int getScore() {
-        return score;
-    }
-
-    public void setScore(int score) {
-        this.score = score;
     }
 
     public String formatDateTime() {

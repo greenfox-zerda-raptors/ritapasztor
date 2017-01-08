@@ -15,5 +15,4 @@ public class ProjectRedditV2Application {
         SpringApplication.run(ProjectRedditV2Application.class, args);
     }
 
-
 }
