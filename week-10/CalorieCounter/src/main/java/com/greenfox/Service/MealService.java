@@ -4,6 +4,8 @@ import com.greenfox.Model.Meal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -14,7 +16,7 @@ import java.util.List;
 public class MealService {
 
     private MealRepository repository;
-    String[] types = new String[]{"Breakfast", "Elevenses", "Lunch", "Snack", "Dinner", "Midnight Snack"};
+    ArrayList<String> types = new ArrayList<>(Arrays.asList("Breakfast", "Elevenses", "Lunch", "Snack", "Dinner", "Midnight Snack"));
 
     @Autowired
     public MealService(MealRepository repository) {
@@ -29,7 +31,7 @@ public class MealService {
         repository.save(meal);
     }
 
-    public String[] getTypes() {
+    public ArrayList<String> getTypes() {
         return types;
     }
 }

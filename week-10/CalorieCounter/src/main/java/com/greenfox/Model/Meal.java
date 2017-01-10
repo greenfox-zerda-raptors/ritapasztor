@@ -27,7 +27,7 @@ public class Meal {
     private long id;
 
     LocalDate date;
-    String[] type;
+    String type;
     String description;
     int totalCalories;
 
