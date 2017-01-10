@@ -11,5 +11,5 @@ import java.util.List;
  */
 @Repository
 public interface MealRepository extends CrudRepository<Meal, Long> {
-    List<Meal> findALl();
+    List<Meal> findAll();
 }

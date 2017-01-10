@@ -12,8 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 
 @Controller
-@RequestMapping("/meals")
+@RequestMapping(value = "/meals")
 public class MealController {
+
 
     private MealService service;
 
@@ -22,7 +23,8 @@ public class MealController {
         this.service = service;
     }
 
-    @GetMapping("/")
+
+    @GetMapping(value = "")
     public String index(Model model) {
         model.addAttribute("meals", service.findAllMeals());
         return "index";

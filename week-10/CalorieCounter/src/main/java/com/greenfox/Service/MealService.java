@@ -13,7 +13,7 @@ import java.util.List;
 @Service
 public class MealService {
 
-    MealRepository repository;
+    private MealRepository repository;
 
     @Autowired
     public MealService(MealRepository repository) {

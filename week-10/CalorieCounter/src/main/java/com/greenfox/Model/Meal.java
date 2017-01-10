@@ -4,11 +4,11 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.data.annotation.Id;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.time.LocalDate;
 
 /**
@@ -25,6 +25,7 @@ public class Meal {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+
     LocalDate date;
     String type;
     String description;
