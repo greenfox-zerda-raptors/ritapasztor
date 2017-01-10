@@ -14,6 +14,7 @@ import java.util.List;
 public class MealService {
 
     private MealRepository repository;
+    String[] types = new String[]{"Breakfast", "Elevenses", "Lunch", "Snack", "Dinner", "Midnight Snack"};
 
     @Autowired
     public MealService(MealRepository repository) {
@@ -21,6 +22,14 @@ public class MealService {
     }
 
     public List<Meal> findAllMeals() {
-        return (List<Meal>) repository.findAll();
+        return repository.findAll();
+    }
+
+    public void createNewMeal(Meal meal) {
+        repository.save(meal);
+    }
+
+    public String[] getTypes() {
+        return types;
     }
 }
