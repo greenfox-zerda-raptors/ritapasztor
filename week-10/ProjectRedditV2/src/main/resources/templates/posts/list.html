@@ -19,8 +19,15 @@
     <link href="list.css" rel="stylesheet"/>
 </head>
 <body>
-<button type="button" class="btn btn-link"><a href="posts/add">Add new post</a></button>
-<h1>Hello Super, be a Hero! ;)</h1>
+
+<div class="page-header">
+    <button type="button" class="btn btn-link"><a href="posts/add">Add new post</a></button>
+    <h1>The ~Reddit Application by Rita Pasztor</h1>
+</div>
+<!--<div class="panel panel-default">-->
+<!--<div class="panel-body">Panel heading</div>-->
+<!--<p>working on the Reddit application </p>-->
+<!--</div>-->
 <table class="table">
     <thead class="thead-default">
     <tr>
@@ -38,7 +45,7 @@
         <td th:text="${post.score}"></td>
         <td><a th:href="@{'/posts/{id}/upvote'(id=${post.id})}">+</a></td>
         <td><a th:href="@{'/posts/{id}/downvote'(id=${post.id})}">-</a></td>
-        <td th:text="${post.content}"></td>
+        <td th:text="${post.title + ' - ' + post.content }"></td>
         <td><a th:href="@{'/posts/{id}/delete' (id=${post.id})}">Delete</a></td>
     </tr>
 </table>

@@ -31,13 +31,14 @@ public class PostController {
     }
 
     @GetMapping(value = "/add")
-    public String addPost() {
+    public String addPost(Model model) {
+        model.addAttribute("newPost", new Post());
         return "posts/add";
     }
 
     @PostMapping(value = "/create")
-    public String create(@RequestParam("message") String comment) {
-        service.createNewPost(new Post(comment));
+    public String create(@ModelAttribute Post newPost) {
+        service.createNewPost(newPost);
         return "redirect:/posts";
     }
 

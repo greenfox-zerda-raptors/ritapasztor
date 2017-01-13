@@ -2,7 +2,6 @@ package com.greenfox.com.greenfox.rita.reddit.Model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -16,7 +15,6 @@ import java.time.format.DateTimeFormatter;
 @Entity
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
 
 public class Post {
@@ -26,13 +24,19 @@ public class Post {
     private long id;
     @Column(length = 1000)
     private String content;
+    private String title;
     private int score;
 
     private LocalDateTime dateTime;
 
-    public Post(String content) {
-        this.content = content;
+    public Post() {
         this.dateTime = LocalDateTime.now();
+    }
+
+    public Post(String content, String title) {
+        this();
+        this.content = content;
+        this.title = title;
     }
 
     public String formatDateTime() {
