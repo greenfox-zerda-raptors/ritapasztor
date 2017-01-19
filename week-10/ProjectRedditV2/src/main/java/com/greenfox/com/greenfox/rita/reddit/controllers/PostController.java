@@ -1,7 +1,7 @@
-package com.greenfox.com.greenfox.rita.reddit.Controllers;
+package com.greenfox.com.greenfox.rita.reddit.controllers;
 
-import com.greenfox.com.greenfox.rita.reddit.Model.Post;
-import com.greenfox.com.greenfox.rita.reddit.Service.PostService;
+import com.greenfox.com.greenfox.rita.reddit.model.Post;
+import com.greenfox.com.greenfox.rita.reddit.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -59,4 +59,5 @@ public class PostController {
         service.deletePost(id);
         return "redirect:/posts";
     }
+
 }

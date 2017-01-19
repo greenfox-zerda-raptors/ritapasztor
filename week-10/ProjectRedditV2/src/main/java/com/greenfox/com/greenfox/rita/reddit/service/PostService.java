@@ -1,6 +1,6 @@
-package com.greenfox.com.greenfox.rita.reddit.Service;
+package com.greenfox.com.greenfox.rita.reddit.service;
 
-import com.greenfox.com.greenfox.rita.reddit.Model.Post;
+import com.greenfox.com.greenfox.rita.reddit.model.Post;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

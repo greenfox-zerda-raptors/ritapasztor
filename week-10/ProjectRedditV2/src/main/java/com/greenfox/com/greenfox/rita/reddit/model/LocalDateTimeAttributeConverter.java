@@ -1,4 +1,4 @@
-package com.greenfox.com.greenfox.rita.reddit.Model;
+package com.greenfox.com.greenfox.rita.reddit.model;
 
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;

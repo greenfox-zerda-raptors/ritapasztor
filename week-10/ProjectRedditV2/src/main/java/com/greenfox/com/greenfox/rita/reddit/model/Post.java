@@ -1,4 +1,4 @@
-package com.greenfox.com.greenfox.rita.reddit.Model;
+package com.greenfox.com.greenfox.rita.reddit.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

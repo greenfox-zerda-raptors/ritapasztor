@@ -1,6 +1,6 @@
 package com.greenfox;
 
-import com.greenfox.com.greenfox.rita.reddit.Service.PostRepository;
+import com.greenfox.com.greenfox.rita.reddit.service.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package com.greenfox.com.greenfox.rita.reddit.Controllers;
+package com.greenfox.com.greenfox.rita.reddit.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
